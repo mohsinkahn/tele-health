@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: #7026A1;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+.btn-danger {
+  background-color: red;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+.btn-white {
+  border: solid 1px #eaecf0;
+  color: #344054;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.btn-filter {
+  border: none;
+  color: #344054;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.btn-secondary {
+  border: solid 1px #d0d5dd;
+  color: #344054;
+  padding: 9px 15px;
+  border-radius: 8px;
+}
+/* Example for WebKit browsers */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7026A1;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#next-logo {
+  display: none !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  -webkit-appearance: none;
+  /* display: none; */
+}
+
+
+.custom-shadow{
+  box-shadow: 5px 3px 1px 8px #98b1ae;
+}
+
+@media(max-width: 768px) {
+ .custom-shadow{
+  box-shadow: none;
+}
+}
+
+.hide-btn {
+  display: none !important;
+}
+
+.back-img{
+  background-image: url(../../public/back.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
+    /* padding: 150px; */
+    background-blend-mode: overlay;
+}
+
+.my-par{
+  border: 1px solid #f6f3f4;
+    padding: 2px 3px;
+    margin: 12px 11px;
+    /* border-radius: 12px; */
+}
+
+.my-img{
+  position: absolute;
+  top:-30px;
+  right: -10px;
+  bottom: 0;
+  height: 163px;
+  /* width: 250px; */
+
+}
