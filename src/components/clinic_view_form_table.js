@@ -273,7 +273,7 @@ return (
     <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
     {/* RIGHT SIDE CONTENT */}
-    <div className="flex-1 px-6 ">
+    <div className="flex-1  ">
 
         <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 

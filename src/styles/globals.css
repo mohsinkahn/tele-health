@@ -110,6 +110,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     /* padding: 150px; */
     background-blend-mode: overlay;
 }
+.back-img2{
+  background-image: url(../../public/search.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
+    /* padding: 150px; */
+    background-blend-mode: overlay;
+}
 
 .my-par{
   border: 1px solid #f6f3f4;

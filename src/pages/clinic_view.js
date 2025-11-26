@@ -151,94 +151,7 @@ return (
                     <h1 className="text-2xl font-[500] text-[#7026A1]">{tabTitles[activeTab]}</h1>
                 </div>
             </div>
-            {/* <div className="flex gap-3 items-center">
-
-                <div>
-                    <Link href="#" className={`btn btn-light border-[#EEEEEE] border bg-white rounded-md pt-[9px]
-                        pb-[9px] px-5 mb-3 p-4 mt-3 transition-all ${ activeTab===tab1 ? "block" : "hidden" }`} //
-                        onClick={()=> setShowModal(true)}
-                    >
-
-                    <Pencil className="inline-block w-4 text-[#6B7280]" />
-
-                    <span className="pl-2 text-[#6B7280]">Edit</span>
-
-                    </Link>
-                </div>
-
-                <div>
-                    <Link href="#"
-                        className="btn btn-light border-[#EEEEEE] border bg-white rounded-md pt-[9px] pb-[9px] px-4 mb-3" // // // //
-                        onClick={()=> setShowModal(true)}
-                    >
-
-                    <Trash className="inline-block w-4 text-[#D91B1B]" />
-                    <span className="pl-2 text-[#D91B1B]">Delete</span>
-
-                    </Link>
-                </div>
-                <div>
-                    <Link href="#" className="btn btn-primary">
-
-                    <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="inline-block">
-                        <path d="M6.99984 1.16667V12.8333M1.1665 7H12.8332" stroke="white" strokeWidth="1.67"
-                            strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>Add doc</span>
-
-                    </Link>
-                </div>
-                <div>
-                    <Link href="#" className="btn btn-primary">
-
-                    <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="inline-block">
-                        <path d="M6.99984 1.16667V12.8333M1.1665 7H12.8332" stroke="white" strokeWidth="1.67"
-                            strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>Add patient</span>
-
-                    </Link>
-                </div>
-                <div>
-                    <Link href="#" className="btn btn-primary">
-
-                    <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="inline-block">
-                        <path d="M6.99984 1.16667V12.8333M1.1665 7H12.8332" stroke="white" strokeWidth="1.67"
-                            strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>Add appoint</span>
-
-                    </Link>
-                </div>
-                <div>
-                    <Link href="#" className="btn btn-primary">
-
-                    <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="inline-block">
-                        <path d="M6.99984 1.16667V12.8333M1.1665 7H12.8332" stroke="white" strokeWidth="1.67"
-                            strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>Add payment</span>
-
-                    </Link>
-                </div>
-                <div>
-                    <Link href="#" className="btn btn-primary">
-
-                    <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        className="inline-block">
-                        <path d="M6.99984 1.16667V12.8333M1.1665 7H12.8332" stroke="white" strokeWidth="1.67"
-                            strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>Add form</span>
-
-                    </Link>
-                </div>
-
-            </div> */}
+          
             <div className="flex gap-3 items-center">
 
                 {/* ====== TAB 1: Edit + Delete ====== */}
@@ -410,9 +323,9 @@ return (
             </div>
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="flex-1   lg:mt-[60px]">
+            <div className="flex-1   px-6  lg:mt-[60px]">
                 {activeTab === "tab1" && (
-                <div className="overflow-auto lg:max-h-[calc(100vh-230px)] px-6 max-h-[calc(100vh-425px)]">
+                <div className="overflow-auto lg:max-h-[calc(100vh-230px)]  max-h-[calc(100vh-425px)]">
                     <div className=" grid lg:grid-cols-1 grid-cols-1 gap-3">
 
                         <div className="h-fit">

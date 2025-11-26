@@ -276,7 +276,7 @@ return (
         
 
                
-                <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col lg:mx-6">
+                <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col ">
 
                     <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
                         <table className="min-w-full text-sm text-left">

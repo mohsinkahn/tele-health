@@ -2,10 +2,10 @@
 import { useState, useMemo,useRef, useEffect } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 import Link from "next/link";
-import { Eye, Edit, Trash2,File } from "lucide-react";
+import { Eye, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
 
-export default function Document() {
+export default function DoctorRecommendationTable() {
 
 const [openIndex, setOpenIndex] = useState(null);
 const menuRefs = useRef([]);
@@ -64,12 +64,13 @@ document.removeEventListener("mousedown", handleClickOutside);
 
 const [suppliers] = useState(
 Array(20).fill({
-id: "#547388",
-name: "XRay_Scan_April.jpeg, ",
-file_size: "12MB",
-format: "PDF",
-type: "Lab report",
-date:"25 - July - 2024",
+
+
+date: "25 - July - 2024",
+notes: "Lorem ipsum dolor sit amet consectetur. Purus diam lorem duis phasellus massa quis.Purus diam lorem duis phasellus massa quis.Purus diam lorem duis phasellus massa quis.Purus diam lorem duis phasellus massa quis",
+patients:"Cody Fisher",
+
+
 })
 );
 // for no data state
@@ -108,12 +109,12 @@ return (
                             <input type="checkbox" checked={isAllSelected} onChange={toggleSelectAll} id="checkAll" />
                         </th> */}
                         {[
-                        "ID No",
-                        "Name",
-                        "File Size",
-                        "Format",
-                        "Type",
                         "Date",
+                       
+                        "Patients",
+                        "Notes",
+                      
+
 
                         ].map((header, idx) => (
                         <th key={idx} className="px-6 py-3 font-[400] text-[#475467] text-[13px]">
@@ -141,42 +142,26 @@ return (
                             />
                         </td> */}
                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.id}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            <File className="text-gray-500 mr-3" />
-                            {s.name}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.file_size}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.format}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.type}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
+                            <Link href="" className="flex items-center">
                             {s.date}
                             </Link>
 
                         </td>
+                       
+                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                            <Link href="" className="flex items-center">
+                            {s.patients}
+                            </Link>
+
+                        </td>
+                       
+                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                            
+                            {s.notes}
+                            
+
+                        </td>
+                         
 
                         <td className="text-center">
                             <div className="flex items-center gap-3">

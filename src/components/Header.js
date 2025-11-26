@@ -58,7 +58,7 @@ return (
       </Link>
 
       {/* Search */}
-      <Link href="#" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/search/new" className="bg-[#F8F8F8] p-[10px] rounded-lg">
 
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

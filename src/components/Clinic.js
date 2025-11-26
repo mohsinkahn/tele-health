@@ -5,7 +5,9 @@ import Link from "next/link";
 import { Eye, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
 
+
 export default function Clinic() {
+
 
 const [openIndex, setOpenIndex] = useState(null);
 const menuRefs = useRef([]);

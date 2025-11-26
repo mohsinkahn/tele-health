@@ -3,19 +3,17 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 // import Doctor from "../components/Doctor";
 // import Clinic from "../components/Clinic";
-import Message from "../components/Message"
-
-import AddMessageModal from "@/components/AddMessageModal";
-
-import Image from "next/image";
-
 import {  Trash2 } from "lucide-react";
+// import { Scheduler, SchedulerProvider } from "mina-scheduler";
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+// import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+import AddCalendarTaskModal from "@/components/AddCalendarTaskModal";
 
 
-
-
-
-export default function Messages() {
+export default function AddPatientPage() {
   const [showModal, setShowModal] = useState(false);  
 
 const [loading, setLoading] = useState(true);
@@ -27,6 +25,10 @@ return () => clearTimeout(timer);
 }, []);
 
 
+ const events = [
+    { title: 'Meeting', start: '2025-11-21T10:00:00', end: '2025-11-21T12:00:00' },
+    { title: 'Conference', start: '2025-11-23', end: '2025-11-24' },
+  ];
 
 
 return (
@@ -37,12 +39,19 @@ return (
       className="lg:flex lg:justify-between lg:items-center items-baseline lg:flex-row grid grid-cols-1 mx-auto   lg:pl-8 lg:pr-6 lg:pt-6">
       <div>
         <h1 className="text-2xl font-[500] text-[#7026A1]">
-          Messages
+          Calendar
         </h1>
 
       </div>
       <div className="flex gap-3 md:flex-row flex-col md:items-center md:mt-0 mt-3">
-              
+        
+           <Link href="#" className="btn btn-danger hidden" id="deleteBtn">
+        <div className="flex items-center gap-2">
+          
+          <Trash2 width={16} height={16} stroke="white" />
+          Delete
+        </div>
+        </Link>
           {/* /client/new path of add new page */}
         <Link href="#" className="btn btn-primary" onClick={() => setShowModal(true)}>
         <div className="flex items-center gap-2">
@@ -50,14 +59,15 @@ return (
             <path d="M6.99984 1.16667V12.8333M1.1665 7H12.8332" stroke="white" strokeWidth="1.67" strokeLinecap="round"
               strokeLinejoin="round" />
           </svg>
-          Add New
+          Add Task
         </div>
         </Link>
-     
-<AddMessageModal
+         <AddCalendarTaskModal
                         isOpen={showModal}
                         onClose={() => setShowModal(false)}
                     />
+     
+
       </div>
     </div>
 
@@ -72,7 +82,7 @@ return (
              aspect-square w-8 flex justify-center items-center text-yellow-700 mt-2"></div>
       {/* Loading text */}
       <p className="text-[#4e758d] text-lg font-medium">
-        Loading Messages...
+        Loading Calendar...
       </p>
 
       {/* Skeleton table preview */}
@@ -119,11 +129,20 @@ return (
 
     ) : (
     <>
-     
-     
-   <Message/>
-
+     <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] px-5 py-5 mt-4 mx-5 rounded-lg">
+       <FullCalendar
+      plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+      initialView="dayGridMonth"
+      headerToolbar={{
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      }}
+      events={events}
       
+    />
+    </div>
+     
     </>
     )}
   </div>

@@ -30,15 +30,15 @@ export default function FileUploader() {
   });
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto mt-2">
       {/* Dropzone Area */}
       <div
         {...getRootProps()}
         className={clsx(
-          "flex flex-col items-center justify-center w-full p-10 border-2 border-dashed rounded-xl transition cursor-pointer",
+          "flex flex-col items-center justify-center w-full p-10 border-2 border-dashed rounded-xl transition cursor-pointer bg-white",
           isDragActive
             ? "border-[#144a6c] bg-[#f5f9fc]"
-            : "border-gray-300 hover:border-[#144a6c]"
+            : "border-gray-300 hover:border-[#7026A1]"
         )}
       >
         <input {...getInputProps()} />
@@ -49,6 +49,9 @@ export default function FileUploader() {
           <>
             <p className="text-[#355E5BCC] text-sm font-normal mt-2 ">
               Drag & drop or click to upload files here.
+            </p>
+            <p className="text-[#355E5BCC] text-sm font-normal mt-2 ">
+              PNG, JPEG, PDF and CSV
             </p>
             {/* <p className="text-xs text-gray-400 mt-1">
               Supports PDF, JPG, JPEG, PNG

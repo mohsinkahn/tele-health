@@ -10,6 +10,14 @@ import DocTimeSlots from "../components/doc_timeslots";
 import BookAppointModal from "../components/BookAppointModal";
 import AddAvailModal from "../components/AddAvailModal";
 
+import PatientPsychiatricPlanTable from "@/components/patient_psychiatric_plan_table";
+import PatientRecommendationTable from "@/components/patient_recommendation_table";
+import Document from "../components/Document";
+import PatientPrescriptionTable from "@/components/patient_prescription_table";
+import PatientAiNotesTable from "@/components/patient_ai_notes_table";
+import PatientAppointmentTable from "@/components/patient_appointment_table";
+import PatientInsuranceClaimTable from "@/components/patient_insurance_claim_table";
+
 export default function PatientViewPage() {
 
 const [showModal, setShowModal] = useState(false);
@@ -546,7 +554,8 @@ return (
                                 <div>
                                     <button
                                         className="btn btn-light border-[#7026A1] border rounded-md pt-[3px] pb-[3px] px-[5px] cursor-pointer"
-                                        onClick={()=> setShowModal2(true)}>
+                                        // onClick={()=> setShowModal2(true)}
+                                        >
                                         <Pencil className="text-[#7026A1] w-5" />
                                     </button>
                                 </div>
@@ -1181,41 +1190,23 @@ return (
                 )}
 
                 {activeTab === "tab2" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Profile</h2>
-                    <p>This is the Profile tab content.</p>
-                </div>
+                <PatientPsychiatricPlanTable/>
                 )}
 
                 {activeTab === "tab3" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Settings</h2>
-                    <p>This is the Settings tab content.</p>
-                </div>
+                <PatientRecommendationTable/>
                 )}
                 {activeTab === "tab4" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Settings2</h2>
-                    <p>This is the Settings tab content.</p>
-                </div>
+                <Document    />
                 )}
                 {activeTab === "tab5" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Settings3</h2>
-                    <p>This is the Settings tab content.</p>
-                </div>
+                <PatientPrescriptionTable/>
                 )}
                 {activeTab === "tab6" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Settings4</h2>
-                    <p>This is the Settings tab content.</p>
-                </div>
+                <PatientAiNotesTable/>
                 )}
                 {activeTab === "tab7" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Settings5</h2>
-                    <p>This is the Settings tab content.</p>
-                </div>
+                <PatientAppointmentTable/>
                 )}
                 {activeTab === "tab8" && (
                 <div>
@@ -1224,10 +1215,7 @@ return (
                 </div>
                 )}
                 {activeTab === "tab9" && (
-                <div>
-                    <h2 className="text-xl font-semibold mb-2">Settings7</h2>
-                    <p>This is the Settings tab content.</p>
-                </div>
+                <PatientInsuranceClaimTable/>
                 )}
             </div>
         </div>

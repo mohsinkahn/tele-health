@@ -220,7 +220,7 @@ return (
           
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="flex-1 px-6 ">
+            <div className="flex-1  ">
                 
 
                 

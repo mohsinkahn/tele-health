@@ -100,7 +100,7 @@ const isAllSelected = useMemo(
 [suppliers, selectedRows]
 );
 return (
-<div className=" mx-auto  md:px-6 ">
+<div className=" mx-auto  ">
 
   <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 

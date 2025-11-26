@@ -2,10 +2,10 @@
 import { useState, useMemo,useRef, useEffect } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 import Link from "next/link";
-import { Eye, Edit, Trash2,File } from "lucide-react";
+import { Eye, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
 
-export default function Document() {
+export default function PatientAppointmentTable() {
 
 const [openIndex, setOpenIndex] = useState(null);
 const menuRefs = useRef([]);
@@ -64,12 +64,15 @@ document.removeEventListener("mousedown", handleClickOutside);
 
 const [suppliers] = useState(
 Array(20).fill({
-id: "#547388",
-name: "XRay_Scan_April.jpeg, ",
-file_size: "12MB",
-format: "PDF",
-type: "Lab report",
-date:"25 - July - 2024",
+id_no: "343",
+complaint: "Vomiting",
+appointment_date: "25 - July - 2024",
+phone_no: "(619) 555-0123",
+email: "johndoe@example.com",
+total_hours: "1h 09m",
+doctors:"Dr. Mariam Begum",
+
+
 })
 );
 // for no data state
@@ -109,11 +112,13 @@ return (
                         </th> */}
                         {[
                         "ID No",
-                        "Name",
-                        "File Size",
-                        "Format",
-                        "Type",
-                        "Date",
+                        "Complaint",
+                        "Appointment Date",
+                        "Doctors",
+                        "Phone Number",
+                        "Email Address",
+                        "Total hours",
+
 
                         ].map((header, idx) => (
                         <th key={idx} className="px-6 py-3 font-[400] text-[#475467] text-[13px]">
@@ -141,39 +146,45 @@ return (
                             />
                         </td> */}
                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.id}
+                            <Link href="" className="flex items-center">
+                            {s.id_no}
                             </Link>
 
                         </td>
                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            <File className="text-gray-500 mr-3" />
-                            {s.name}
+                            <Link href="" className="flex items-center">
+                            {s.complaint}
                             </Link>
 
                         </td>
                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.file_size}
+                            <Link href="" className="flex items-center">
+                            {s.appointment_date}
+                            </Link>
+
+                        </td>
+                       
+                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                            <Link href="" className="flex items-center">
+                            {s.doctors}
+                            </Link>
+
+                        </td>
+                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                            <Link href="" className="flex items-center">
+                            {s.phone_no}
+                            </Link>
+
+                        </td>
+                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                            <Link href="" className="flex items-center">
+                            {s.email}
                             </Link>
 
                         </td>
                         <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.format}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.type}
-                            </Link>
-
-                        </td>
-                        <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
-                            <Link href="#" className="flex items-center">
-                            {s.date}
+                            <Link href="" className="flex items-center">
+                            {s.total_hours}
                             </Link>
 
                         </td>
