@@ -165,7 +165,7 @@ const AddDocumentModal = ({ isOpen, onClose }) => {
                                                         <SelectTrigger className="w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#7026A1] border border-[#EBEBEB] px-2 py-3 rounded-[8px] font-poppins bg-white">
                                                             <SelectValue placeholder="Select" />
                                                         </SelectTrigger>
-                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] font-poppins bg-white w-full">
+                                                        <SelectContent className="rounded-lg border border-[#EBEBEB] font-poppins bg-white w-full">
                                                             <SelectItem
                                                                 value="Active"
                                                                 className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-white cursor-pointer"

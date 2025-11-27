@@ -8,7 +8,8 @@ import Appointment from "../components/Appointment"
 
 import {  Trash2 } from "lucide-react";
 export default function Documents() {
-  
+  const [showModal, setShowModal] = useState(false);
+
 const [loading, setLoading] = useState(true);
 
 // Simulate loading

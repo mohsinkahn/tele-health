@@ -5,10 +5,8 @@ import { useEffect, useState,useMemo } from "react";
 import { ChevronRight,Plus,Download,Pencil,Trash } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import DocViewPicker from "../components/doc_view_picker";
-import DocTimeSlots from "../components/doc_timeslots";
-import BookAppointModal from "../components/BookAppointModal";
-import AddAvailModal from "../components/AddAvailModal";
+import BookAppointModal from "@/components/BookAppointModal";
+
 
 import AppointmentTable from "./appointment_table";
 
@@ -294,9 +292,9 @@ return (
             </div>
             <div className="lg:flex grid grid-cols-1  gap-3 lg:items-center">
                 <div>
-                    <Link href="#"
+                    <Link href="/calendar/new"
                         className="btn btn-light border-[#EEEEEE] border bg-white rounded-md py-3 px-4 mt-1  inline-block" // // // // //
-                        onClick={()=> setShowModal(true)}
+                        // onClick={()=> setShowModal(true)}
                     >
 
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -311,7 +309,7 @@ return (
                 <div>
                     <Link href="#"
                         className="btn btn-light border-[#EEEEEE] border bg-white rounded-md py-3 px-4 mt-1  inline-block" // // // // //
-                        onClick={()=> setShowModal(true)}
+                        // onClick={()=> setShowModal(true)}
                     >
 
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -341,7 +339,9 @@ return (
                     </div>
                 </div>
                 <div>
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary"
+                    onClick={()=> setShowModal2(true)}
+                    >
 
                     <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
                         className="inline-block">
@@ -351,6 +351,7 @@ return (
                     <span className="ml-2">Add New</span>
 
                     </Link>
+                    <BookAppointModal isOpen={showModal2} onClose={()=> setShowModal2(false)}/>
                 </div>
 
             </div>

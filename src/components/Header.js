@@ -94,7 +94,7 @@ return (
       </div>
 
       {/* ✅ Logout icon — now visible on all screens */}
-      <Link href="#" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/login/new" className="bg-[#F8F8F8] p-[10px] rounded-lg">
 
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

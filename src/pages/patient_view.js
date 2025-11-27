@@ -9,18 +9,31 @@ import DocViewPicker from "../components/doc_view_picker";
 import DocTimeSlots from "../components/doc_timeslots";
 import BookAppointModal from "../components/BookAppointModal";
 import AddAvailModal from "../components/AddAvailModal";
+import AddRecommendationModal from "@/components/AddRecommendatioModal";
+import AddDocumentModal from "@/components/AddDocumentModal";
+import AddPrescriptionModal from "@/components/AddPrescriptionModal";
+import AddAllergiesModal   from "@/components/AddAllergiesModal";
+import AddVitalsModal from "@/components/AddVitalsModal"
 
 import PatientPsychiatricPlanTable from "@/components/patient_psychiatric_plan_table";
 import PatientRecommendationTable from "@/components/patient_recommendation_table";
 import Document from "../components/Document";
 import PatientPrescriptionTable from "@/components/patient_prescription_table";
-import PatientAiNotesTable from "@/components/patient_ai_notes_table";
+import PatientAiNotesTable from "@/components/patient_ai_notes_table";  
 import PatientAppointmentTable from "@/components/patient_appointment_table";
 import PatientInsuranceClaimTable from "@/components/patient_insurance_claim_table";
 
 export default function PatientViewPage() {
 
 const [showModal, setShowModal] = useState(false);
+
+const [showModal6, setShowModal6] = useState(false);
+
+const [showModal5, setShowModal5] = useState(false);
+
+const [showModal4, setShowModal4] = useState(false);
+
+const [showModal3, setShowModal3] = useState(false);
 
 const [showModal2, setShowModal2] = useState(false);
 
@@ -204,7 +217,7 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="/psy_plan/new" className="btn btn-primary" // onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -243,7 +256,7 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="/psy_plan/new" className="btn btn-primary" // onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -283,7 +296,8 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="#" className="btn btn-primary" 
+                       onClick={()=> setShowModal3(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -291,6 +305,11 @@ return (
                     <span className="pl-2 text-white">Recommendation</span>
 
                     </Link>
+                   
+                <AddRecommendationModal
+                        isOpen={showModal3}
+                        onClose={() => setShowModal3(false)}
+                    />
 
                 </>
                 )}
@@ -322,7 +341,8 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="#" className="btn btn-primary" 
+                       onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -330,7 +350,10 @@ return (
                     <span className="pl-2 text-white">Documents</span>
 
                     </Link>
-
+                 <AddDocumentModal
+                        isOpen={showModal}
+                        onClose={() => setShowModal(false)}
+                    />
                 </>
                 )}
 
@@ -361,7 +384,8 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="#" className="btn btn-primary" 
+                       onClick={()=> setShowModal4(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -369,7 +393,10 @@ return (
                     <span className="pl-2 text-white">Prescription</span>
 
                     </Link>
-
+                  <AddPrescriptionModal
+                        isOpen={showModal4}
+                        onClose={() => setShowModal4(false)}
+                    />
                 </>
                 )}
 
@@ -805,12 +832,13 @@ return (
                             <div>
                                 <button
                                     className="btn btn-light border-[#7026A1] border rounded-md pt-[3px] pb-[3px] px-[5px] cursor-pointer"
-                                    onClick={()=> setShowModal2(true)}>
+                                    onClick={()=> setShowModal6(true)}
+                                    >
                                     <Plus className="text-[#7026A1] w-5" />
                                 </button>
                             </div>
                         </div>
-                        <AddAvailModal isOpen={showModal2} onClose={()=> setShowModal2(false)}
+                        <AddVitalsModal isOpen={showModal6} onClose={()=> setShowModal6(false)}
                             />
                             <div className="grid lg:grid-cols-4 grid-cols-1 gap-3">
                                 <div className="bg-[#F8FAF8] rounded-2xl mt-3  pt-4 pb-4 px-4">
@@ -952,13 +980,16 @@ return (
                                 <div>
                                     <button
                                         className="btn btn-light border-[#7026A1] border rounded-md pt-[3px] pb-[3px] px-[5px] cursor-pointer"
-                                        onClick={()=> setShowModal2(true)}>
+                                        onClick={()=> setShowModal3(true)}
+                                        >
                                         <Plus className="text-[#7026A1] w-5" />
                                     </button>
                                 </div>
                             </div>
-                            <AddAvailModal isOpen={showModal2} onClose={()=> setShowModal2(false)}
-                                />
+                            <AddRecommendationModal
+                        isOpen={showModal3}
+                        onClose={() => setShowModal3(false)}
+                    />
                                 <div className="mt-4 overflow-auto lg:h-[280px] max-h-[calc(100vh-425px)]">
 
                                     <div
@@ -1030,12 +1061,13 @@ return (
                                 <div>
                                     <button
                                         className="btn btn-light border-[#7026A1] border rounded-md pt-[3px] pb-[3px] px-[5px] cursor-pointer"
-                                        onClick={()=> setShowModal2(true)}>
+                                        onClick={()=> setShowModal4(true)}
+                                        >
                                         <Plus className="text-[#7026A1] w-5" />
                                     </button>
                                 </div>
                             </div>
-                            <AddAvailModal isOpen={showModal2} onClose={()=> setShowModal2(false)}
+                            <AddPrescriptionModal isOpen={showModal4} onClose={()=> setShowModal4(false)}
                                 />
                                 <div className="mt-4 overflow-auto lg:h-[280px] max-h-[calc(100vh-425px)]">
 
@@ -1133,12 +1165,12 @@ return (
                                 <div>
                                     <button
                                         className="btn btn-light border-[#7026A1] border rounded-md pt-[3px] pb-[3px] px-[5px] cursor-pointer"
-                                        onClick={()=> setShowModal2(true)}>
+                                        onClick={()=> setShowModal5(true)}>
                                         <Plus className="text-[#7026A1] w-5" />
                                     </button>
                                 </div>
                             </div>
-                            <AddAvailModal isOpen={showModal2} onClose={()=> setShowModal2(false)}
+                            <AddAllergiesModal isOpen={showModal5} onClose={()=> setShowModal5(false)}
                                 />
 
                                 <div className="mt-4 overflow-auto lg:h-[280px] max-h-[calc(100vh-425px)]">

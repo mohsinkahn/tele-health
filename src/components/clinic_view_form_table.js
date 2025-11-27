@@ -5,16 +5,11 @@ import { useEffect, useState,useMemo } from "react";
 import { ChevronRight,Plus,Download,Pencil,Trash } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import DocViewPicker from "../components/doc_view_picker";
-import DocTimeSlots from "../components/doc_timeslots";
-import BookAppointModal from "../components/BookAppointModal";
-import AddAvailModal from "../components/AddAvailModal";
-
+import EditFormModal from "./EditFormModal";
 export default function PaymentTablePage() {
 
 const [showModal, setShowModal] = useState(false);
 
-const [showModal2, setShowModal2] = useState(false);
 
 const router = useRouter();
 const { id } = router.query;
@@ -368,7 +363,9 @@ return (
                             <td className="text-center">
                                 <div className="flex items-center gap-3">
 
-                                    <Link href="">
+                                    <Link href=""
+                                    onClick={()=> setShowModal(true)}
+                                    >
 
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -378,6 +375,7 @@ return (
                                     </svg>
 
                                     </Link>
+                                     <EditFormModal isOpen={showModal} onClose={()=> setShowModal(false)}/>
                                     <Link href="">
 
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none"

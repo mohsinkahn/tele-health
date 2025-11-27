@@ -9,6 +9,7 @@ import DocViewPicker from "../components/doc_view_picker";
 import DocTimeSlots from "../components/doc_timeslots";
 import BookAppointModal from "../components/BookAppointModal";
 import AddAvailModal from "../components/AddAvailModal";
+import AddFormModal from "@/components/AddFormModal";
 
 import Patient from "@/components/Patient";
 
@@ -24,7 +25,10 @@ export default function DoctorViewPage() {
 
 const [showModal, setShowModal] = useState(false);  
 
-const [showModal2, setShowModal2] = useState(false);  
+const [showModal2, setShowModal2] = useState(false);
+
+const [showModal3, setShowModal3] = useState(false);
+
 
 const router = useRouter();
 const { id } = router.query;
@@ -262,7 +266,8 @@ return (
                     <span className="pl-2 text-[#D91B1B]">Delete</span>
                     </Link>
                       
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="#" className="btn btn-primary"
+                        onClick={()=> setShowModal3(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -270,6 +275,7 @@ return (
                     <span className="pl-2 text-white">Add New</span>
 
                     </Link>
+                    <AddFormModal isOpen={showModal3} onClose={()=> setShowModal3(false)}/>
 
                 </>
                 )}
@@ -303,7 +309,7 @@ return (
 
     <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
       {/* LEFT SIDE TABS */}
-      <div className="w-20   bg-white flex flex-col rounded-2xl justify-start items-center h-[100%] z-2">
+      <div className="w-20   bg-white flex flex-col rounded-2xl justify-start items-center h-[100%] z-2 px-4">
                 <Link href="" className="px-4 py-7 border-b border-[#E5E7EB]">
 
                 <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">

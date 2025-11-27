@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import Doctor from "../components/Doctor";
 import Pateint from "../components/Patient"
 import Clinic_View_Appoint_Table from "../components/clinic_view_appointment_table"
+import AddPaymentModal from "@/components/AddPaymentModal";
+import BookAppointModal from "@/components/BookAppointModal";
+import AddFormModal from "@/components/AddFormModal";
+
 
 import Payment_Table from "../components/payment_table"
 
@@ -13,16 +17,13 @@ import Clinic_View_Form from "../components/clinic_view_form_table"
 import { ChevronRight,Plus,Download,Pencil,Trash } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import DocViewPicker from "../components/doc_view_picker";
-import DocTimeSlots from "../components/doc_timeslots";
-import BookAppointModal from "../components/BookAppointModal";
-import AddAvailModal from "../components/AddAvailModal";
 
 export default function ClinicViewPage() {
 
 const [showModal, setShowModal] = useState(false);
 
 const [showModal2, setShowModal2] = useState(false);
+const [showModal3, setShowModal3] = useState(false);
 
 const router = useRouter();
 const { id } = router.query;
@@ -184,7 +185,7 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="/adddoctor/new" className="btn btn-primary">
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>
@@ -209,7 +210,7 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="/addpatient/new" className="btn btn-primary">
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>
@@ -233,12 +234,15 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary"
+                    onClick={()=> setShowModal(true)}
+                    >
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>
                     <span>Add New</span>
                     </Link>
+                  <BookAppointModal isOpen={showModal} onClose={()=> setShowModal(false)}/>
                 </>
                 )}
 
@@ -257,12 +261,15 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary"
+                    onClick={()=> setShowModal(true)}
+                    >
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>
                     <span>Upgrade Plan</span>
                     </Link>
+                    <AddPaymentModal isOpen={showModal} onClose={()=> setShowModal(false)}/>
                 </>
                 )}
 
@@ -281,12 +288,15 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="#" className="btn btn-primary">
+                    <Link href="#" className="btn btn-primary"
+                    onClick={()=> setShowModal3(true)}
+                    >
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>
                     <span>Add Form</span>
                     </Link>
+                    <AddFormModal isOpen={showModal3} onClose={()=> setShowModal3(false)}/>
                 </>
                 )}
 
