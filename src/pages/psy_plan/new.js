@@ -192,7 +192,7 @@ export default function PsychiatricPlanPage() {
               
               <div className="space-y-4">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="chiefComplaint" className="text-[#202E2D]">Chief Complaint in patient's own words</label>
+                  <label htmlFor="chiefComplaint" className="text-[#202E2D]">Chief Complaint in patient&quot;s own words</label>
                   <textarea
                     id="chiefComplaint"
                     name="chiefComplaint"

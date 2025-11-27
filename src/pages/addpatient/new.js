@@ -687,7 +687,7 @@ export default function AddPatientPage() {
            
               <div className="space-y-4">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="chiefComplaint" className="text-[#202E2D]">Chief Complaint reason for today's visit:</label>
+                  <label htmlFor="chiefComplaint" className="text-[#202E2D]">Chief Complaint reason for today&quot;s visit:</label>
                   <textarea
                     id="chiefComplaint"
                     name="chiefComplaint"
