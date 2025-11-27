@@ -192,7 +192,7 @@ export default function PsychiatricPlanPage() {
               
               <div className="space-y-4">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="chiefComplaint" className="text-[#202E2D]">Chief Complaint (in patient's own words)</label>
+                  <label htmlFor="chiefComplaint" className="text-[#202E2D]">Chief Complaint in patient's own words</label>
                   <textarea
                     id="chiefComplaint"
                     name="chiefComplaint"
@@ -571,7 +571,7 @@ export default function PsychiatricPlanPage() {
              
               <div className="space-y-4">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="patientUnderstandingOfTreatmentPlan" className="text-[#202E2D]">Patient's Understanding of Treatment Plan</label>
+                  <label htmlFor="patientUnderstandingOfTreatmentPlan" className="text-[#202E2D]">Patient &quot;s Understanding of Treatment Plan</label>
                   <textarea
                     id="patientUnderstandingOfTreatmentPlan"
                     name="patientUnderstandingOfTreatmentPlan"
@@ -663,7 +663,7 @@ export default function PsychiatricPlanPage() {
                   />
                 </div>
                 <p className="text-xs text-gray-600 italic mt-2">
-                  By signing this form electronically, and clicking on 'Submit Signature', you are agreeing to the terms stated herein.
+                  By signing this form electronically, and clicking on  &quot;Submit Signature &quot;, you are agreeing to the terms stated herein.
                 </p>
               </div>
             </section>
