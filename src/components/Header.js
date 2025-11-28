@@ -51,7 +51,7 @@ return (
 
       </Link>
       {/* setting */}
-      <Link href="#" className="bg-[#F8F8F8] p-[10px] rounded-lg ">
+      <Link href="/settings/new" className="bg-[#F8F8F8] p-[10px] rounded-lg ">
 
       <Settings className=" text-[#6B7280]" width="19" height="18" />
 

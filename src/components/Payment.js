@@ -63,96 +63,147 @@ status: "Paid",
 const [suppliers2] = useState([
 {
 invoice_no: "#547381",
-package: "Package 1",
-date: "18-08-2024",
-amount: "$ 1000",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
 status: "Paid",
 },
 {
-invoice_no: "#547382",
-package: "Package 2",
-date: "18-08-2024",
-amount: "$ 800",
-status: "Unpaid",
-},
-{
-invoice_no: "#547383",
-package: "Package 3",
-date: "18-08-2024",
-amount: "$ 1200",
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
 status: "Paid",
 },
 {
-invoice_no: "#547384",
-package: "Package 4",
-date: "18-08-2024",
-amount: "$ 600",
-status: "Unpaid",
-},
-{
-invoice_no: "#547385",
-package: "Package 5",
-date: "18-08-2024",
-amount: "$ 1500",
-status: "Partially",
-},
-{
-invoice_no: "#547385",
-package: "Package 5",
-date: "18-08-2024",
-amount: "$ 1500",
-status: "Partially",
-},
-{
-invoice_no: "#547385",
-package: "Package 5",
-date: "18-08-2024",
-amount: "$ 1500",
-status: "Partially",
-},
-{
-invoice_no: "#547383",
-package: "Package 3",
-date: "18-08-2024",
-amount: "$ 1200",
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
 status: "Paid",
 },
 {
-invoice_no: "#547384",
-package: "Package 4",
-date: "18-08-2024",
-amount: "$ 600",
-status: "Unpaid",
-},
-{
-invoice_no: "#547383",
-package: "Package 3",
-date: "18-08-2024",
-amount: "$ 1200",
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
 status: "Paid",
 },
 {
-invoice_no: "#547384",
-package: "Package 4",
-date: "18-08-2024",
-amount: "$ 600",
-status: "Unpaid",
-},
-{
-invoice_no: "#547383",
-package: "Package 3",
-date: "18-08-2024",
-amount: "$ 1200",
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
 status: "Paid",
 },
 {
-invoice_no: "#547384",
-package: "Package 4",
-date: "18-08-2024",
-amount: "$ 600",
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Paid",
+},
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
 status: "Unpaid",
 },
-
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Unpaid",
+},
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Paid",
+},
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Paid",
+},
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Paid",
+},
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Unpaid",
+},
+{
+invoice_no: "#547381",
+doctor: "Dr. Tyra Dhillon",
+patient: "Johnsie Jock",
+treatment:"orthognathic surgery",
+app_date: "18-08-2024",
+total_amount: "$ 1000",
+paid_amount: "$ 1000",
+remaining:"$ 2000",
+status: "Unpaid",
+},
 ]);
 
 const [selectedRows, setSelectedRows] = useState([]);
@@ -272,9 +323,13 @@ return (
                                     </th> */}
                                     {[
                                     "Invoice Number",
-                                    "Package",
-                                    "Date",
-                                    "Amount",
+                                    "Doctors",
+                                    "Patients",
+                                    "Treament",
+                                    "Appointment Date",
+                                    "Total Amount",
+                                    "Paid Amount",
+                                    "Remaining",
                                     "Status",
 
                                     ].map((header, idx) => (
@@ -310,19 +365,44 @@ return (
                                     </td>
                                     <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
                                         <Link href="#" className="flex items-center">
-                                        {s.package}
+                                        {s.doctor}
                                         </Link>
 
                                     </td>
                                     <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
                                         <Link href="#" className="flex items-center">
-                                        {s.date}
+                                        {s.patient}
                                         </Link>
 
                                     </td>
                                     <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
                                         <Link href="#" className="flex items-center">
-                                        {s.amount}
+                                        {s.treatment}
+                                        </Link>
+
+                                    </td>
+
+                                    <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                                        <Link href="#" className="flex items-center">
+                                        {s.app_date}
+                                        </Link>
+
+                                    </td>
+                                    <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                                        <Link href="#" className="flex items-center">
+                                        {s.total_amount}
+                                        </Link>
+
+                                    </td>
+                                    <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                                        <Link href="#" className="flex items-center">
+                                        {s.paid_amount}
+                                        </Link>
+
+                                    </td>
+                                    <td className="px-6 py-3 text-[#475467] text-[12px] font-[400]">
+                                        <Link href="#" className="flex items-center">
+                                        {s.remaining}
                                         </Link>
 
                                     </td>

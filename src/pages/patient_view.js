@@ -14,6 +14,7 @@ import AddDocumentModal from "@/components/AddDocumentModal";
 import AddPrescriptionModal from "@/components/AddPrescriptionModal";
 import AddAllergiesModal   from "@/components/AddAllergiesModal";
 import AddVitalsModal from "@/components/AddVitalsModal"
+// import BookAppointModal from "../components/BookAppointModal";
 
 import PatientPsychiatricPlanTable from "@/components/patient_psychiatric_plan_table";
 import PatientRecommendationTable from "@/components/patient_recommendation_table";
@@ -26,6 +27,8 @@ import PatientInsuranceClaimTable from "@/components/patient_insurance_claim_tab
 export default function PatientViewPage() {
 
 const [showModal, setShowModal] = useState(false);
+
+const [showModal7, setShowModal7] = useState(false);
 
 const [showModal6, setShowModal6] = useState(false);
 
@@ -457,7 +460,8 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="#" className="btn btn-primary" 
+                       onClick={()=> setShowModal7(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -465,6 +469,11 @@ return (
                     <span className="pl-2 text-white">Appointment</span>
 
                     </Link>
+
+                     <BookAppointModal
+                        isOpen={showModal7}
+                        onClose={() => setShowModal7(false)}
+                    />
 
                 </>
                 )}
