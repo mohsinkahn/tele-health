@@ -15,8 +15,7 @@ export default function Layout({ children, font = "poppins" }) {
 
     const pathname = usePathname();
 
-    // ❌ Hide layout elements on login page
-    const hideLayout = pathname === "/login/new";
+    const hideLayout = pathname === "/login";
 
     return (
         <div className={`min-h-screen flex flex-col bg-gray-50 gap-5 ${fontClass}`}>

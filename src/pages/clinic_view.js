@@ -185,7 +185,7 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="/adddoctor/new" className="btn btn-primary">
+                    <Link href="/adddoctor" className="btn btn-primary">
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>
@@ -210,7 +210,7 @@ return (
                             </svg>
                         </div>
                     </div>
-                    <Link href="/addpatient/new" className="btn btn-primary">
+                    <Link href="/addpatient" className="btn btn-primary">
                     <svg width="14" height="14" className="inline-block">
                         <path d="M6.999 1.166v11.667M1.166 7h11.667" stroke="white" strokeWidth="1.67" />
                     </svg>

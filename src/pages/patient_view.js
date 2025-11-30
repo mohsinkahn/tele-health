@@ -220,7 +220,7 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="/psy_plan/new" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="/psy_planfouhn" className="btn btn-primary" // onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -259,7 +259,7 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="/psy_plan/new" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="/psy_plan" className="btn btn-primary" // onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />

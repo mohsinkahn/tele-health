@@ -39,7 +39,6 @@ return (
 
     {/* Right Section: Icons */}
     <div className="flex items-center gap-3 ml-2 sm:gap-3">
-
       {/* calendar */}
       <Link href="/calendar/new" className="bg-[#F8F8F8] p-[10px] rounded-lg">
 
@@ -51,14 +50,14 @@ return (
 
       </Link>
       {/* setting */}
-      <Link href="/settings/new" className="bg-[#F8F8F8] p-[10px] rounded-lg ">
+      <Link href="/settings" className="bg-[#F8F8F8] p-[10px] rounded-lg ">
 
       <Settings className=" text-[#6B7280]" width="19" height="18" />
 
       </Link>
 
       {/* Search */}
-      <Link href="/search/new" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/search" className="bg-[#F8F8F8] p-[10px] rounded-lg">
 
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -94,7 +93,7 @@ return (
       </div>
 
       {/* ✅ Logout icon — now visible on all screens */}
-      <Link href="/login/new" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/login" className="bg-[#F8F8F8] p-[10px] rounded-lg">
 
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
