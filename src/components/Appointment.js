@@ -292,7 +292,7 @@ return (
             </div>
             <div className="lg:flex grid grid-cols-1  gap-3 lg:items-center">
                 <div>
-                    <Link href="/calendar/new"
+                    <Link href="/calendar"
                         className="btn btn-light border-[#EEEEEE] border bg-white rounded-md py-3 px-4 mt-1  inline-block" // // // // //
                         // onClick={()=> setShowModal(true)}
                     >

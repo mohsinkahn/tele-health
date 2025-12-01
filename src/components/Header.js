@@ -40,7 +40,7 @@ return (
     {/* Right Section: Icons */}
     <div className="flex items-center gap-3 ml-2 sm:gap-3">
       {/* calendar */}
-      <Link href="/calendar/new" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/calendar" className="bg-[#F8F8F8] p-[10px] rounded-lg">
 
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
