@@ -4,8 +4,12 @@ import ActionsMenu from "@/components/ActionsMenu";
 import Link from "next/link";
 import { Eye, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
+import DeleteModal from "./DeleteModal";
+
 
 export default function Patient() {
+
+const [showModal, setShowModal] = useState(false);  
 
 const [openIndex, setOpenIndex] = useState(null);
 const menuRefs = useRef([]);
@@ -100,7 +104,7 @@ const isAllSelected = useMemo(
 );
 return (
 <div className=" mx-auto ">
-
+<DeleteModal    isOpen={showModal}  onClose={() => setShowModal(false)} />
   <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 
     <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
@@ -185,7 +189,7 @@ return (
                 </svg>
 
                 </Link>
-                <Link href="">
+                <Link href="" onClick={() => setShowModal(true)} >
 
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path

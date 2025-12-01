@@ -5,10 +5,8 @@ import { useEffect, useState,useMemo } from "react";
 import { ChevronRight,Plus,Download,Pencil,Trash } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import DocViewPicker from "../components/doc_view_picker";
-import DocTimeSlots from "../components/doc_timeslots";
-import BookAppointModal from "../components/BookAppointModal";
-import AddAvailModal from "../components/AddAvailModal";
+import AddPaymentModal from "@/components/AddPaymentModal";
+
 
 import Payment_Table from "../components/payment_table"
 
@@ -16,7 +14,6 @@ export default function PaymentViewPage() {
 
 const [showModal, setShowModal] = useState(false);
 
-const [showModal2, setShowModal2] = useState(false);
 
 const router = useRouter();
 const { id } = router.query;
@@ -240,7 +237,7 @@ Paid: (
 ),
 
 Unpaid: (
-<Link href="" className="unpaid">
+<Link href="" className="unpaid" onClick={() => setShowModal(true)}>
 
 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -249,6 +246,7 @@ Unpaid: (
 </svg>
 
 </Link>
+
 ),
 
 Partially: (
@@ -288,6 +286,10 @@ return (
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
         <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+            <AddPaymentModal
+                        isOpen={showModal}
+                        onClose={() => setShowModal(false)}
+                    />
             {/* LEFT SIDE TABS */}
             <div className="w-20   bg-white flex flex-col rounded-2xl  items-center  z-2">
 

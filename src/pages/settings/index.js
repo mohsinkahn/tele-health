@@ -5,39 +5,23 @@ import { useEffect, useState, useRef } from "react";
 import { ChevronRight, Plus, Download, Pencil, Trash, Check, ArrowRight, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-// import DocViewPicker from "../components/doc_view_picker";
-// import DocTimeSlots from "../components/doc_timeslots";
-// import BookAppointModal from "../components/BookAppointModal";
-// import AddAvailModal from "../components/AddAvailModal";
-// import AddRecommendationModal from "@/components/AddRecommendatioModal";
-// import AddDocumentModal from "@/components/AddDocumentModal";
-// import AddPrescriptionModal from "@/components/AddPrescriptionModal";
-// import AddAllergiesModal   from "@/components/AddAllergiesModal";
-// import AddVitalsModal from "@/components/AddVitalsModal"
-
-// import PatientPsychiatricPlanTable from "@/components/patient_psychiatric_plan_table";
-// import PatientRecommendationTable from "@/components/patient_recommendation_table";
-// import Document from "../components/Document";
-// import PatientPrescriptionTable from "@/components/patient_prescription_table";
-// import PatientAiNotesTable from "@/components/patient_ai_notes_table";  
-// import PatientAppointmentTable from "@/components/patient_appointment_table";
-// import PatientInsuranceClaimTable from "@/components/patient_insurance_claim_table";
+import ErmPlanModal from "@/components/ErmPlanModal";
+import TreatmentPlanModal from "@/components/TreatmentPlanModal";
+import FormTemplateModal from "@/components/FormTemplateModal";
+import EditFormModal from "@/components/EditFormModal";
+import DeleteModal from "@/components/DeleteModal";
 
 export default function Settings() {
 
     const [showModal, setShowModal] = useState(false);
-
-    const [showModal7, setShowModal7] = useState(false);
-
-    const [showModal6, setShowModal6] = useState(false);
-
-    const [showModal5, setShowModal5] = useState(false);
 
     const [showModal4, setShowModal4] = useState(false);
 
     const [showModal3, setShowModal3] = useState(false);
 
     const [showModal2, setShowModal2] = useState(false);
+
+    const [showModal5, setShowModal5] = useState(false);
 
     const router = useRouter();
     const { id } = router.query;
@@ -2101,11 +2085,13 @@ export default function Settings() {
                                <h2 className="text-xl font-medium text-[#6B7280]">ERM Packages</h2>
                                     <button
                                         // onClick={handleAddTemplate}
+                                        onClick={()=> setShowModal(true)}
                                         className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-4 py-2 font-medium flex items-center gap-2"
                                     >
                                         <Pencil className="w-5 h-5" />
                                         <span>Edit</span>
                                     </button>
+                                    <ErmPlanModal isOpen={showModal} onClose={()=> setShowModal(false)}/>
                             </div>
                             <div className="w-full flex flex-col lg:flex-row gap-6 justify-center items-center py-14 px-4">
                                 {plans.map((plan, i) => (
@@ -2186,11 +2172,13 @@ export default function Settings() {
                                <h2 className="text-xl font-medium text-[#6B7280]">Treatment Plan</h2>
                                     <button
                                         // onClick={handleAddTemplate}
+                                        onClick={()=> setShowModal2(true)}
                                         className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-4 py-2 font-medium flex items-center gap-2"
                                     >
                                         <Pencil className="w-5 h-5" />
                                         <span>Edit</span>
                                     </button>
+                                    <TreatmentPlanModal isOpen={showModal2} onClose={()=> setShowModal2(false)}/>
                             </div>
                             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 py-10">
                                 {plans2.map((plan, i) => (
@@ -2258,12 +2246,16 @@ export default function Settings() {
                                 <div className="flex items-center justify-between mb-6">
                                     <h2 className="text-xl font-medium text-[#6B7280]">Form Creation</h2>
                                     <button
-                                        onClick={handleAddTemplate}
+                                        // onClick={handleAddTemplate}
+                                        onClick={()=> setShowModal3(true)}
                                         className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-4 py-2 font-medium flex items-center gap-2"
                                     >
                                         <Plus className="w-5 h-5" />
                                         <span>Add</span>
                                     </button>
+                                    <FormTemplateModal isOpen={showModal3} onClose={()=> setShowModal3(false)}/>
+                                        <EditFormModal isOpen={showModal4} onClose={()=> setShowModal4(false)}/>
+                                            <DeleteModal isOpen={showModal5} onClose={()=> setShowModal5(false)}/>
                                 </div>
 
                                 {/* Form Creation Table */}
@@ -2309,7 +2301,8 @@ export default function Settings() {
                                                     <td className="py-4 px-4">
                                                         <div className="flex items-center gap-3">
                                                             <button
-                                                                onClick={() => handleEditTemplate(template.id)}
+                                                                // onClick={() => handleEditTemplate(template.id)}
+                                                                onClick={()=> setShowModal4(true)}
                                                                 className="text-[#6B7280] hover:text-[#7026A1] transition-colors"
                                                                 title="Edit"
                                                             >
@@ -2320,7 +2313,8 @@ export default function Settings() {
                                                                 </svg>
                                                             </button>
                                                             <button
-                                                                onClick={() => handleDeleteTemplate(template.id)}
+                                                                // onClick={() => handleDeleteTemplate(template.id)}
+                                                                onClick={()=> setShowModal5(true)}
                                                                 className="text-[#D91B1B] hover:text-[#B91C1C] transition-colors"
                                                                 title="Delete"
                                                             >

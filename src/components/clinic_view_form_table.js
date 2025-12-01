@@ -269,7 +269,7 @@ return (
 
     {/* RIGHT SIDE CONTENT */}
     <div className="flex-1  ">
-
+   <EditFormModal isOpen={showModal} onClose={()=> setShowModal(false)}/>
         <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 
             <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
@@ -375,7 +375,7 @@ return (
                                     </svg>
 
                                     </Link>
-                                     <EditFormModal isOpen={showModal} onClose={()=> setShowModal(false)}/>
+                                     
                                     <Link href="">
 
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
