@@ -1051,7 +1051,7 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 13 - INSURED'S OR AUTHORIZED PERSON&apos;S SIGNATURE
+                - 13 - INSURED&apos;S OR AUTHORIZED PERSON&apos;S SIGNATURE
               </h2>
               
               <div className="space-y-6">
@@ -1707,7 +1707,7 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 33 - PHYSICIAN'S/SUPPLIER&apos;S BILLING INFORMATION
+                - 33 - PHYSICIAN&apos;S/SUPPLIER&apos;S BILLING INFORMATION
               </h2>
               
               <div className="space-y-6">
