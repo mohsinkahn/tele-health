@@ -290,7 +290,7 @@ return (
                     <h1 className="text-2xl font-[500] text-[#7026A1]">{tabTitles[activeTab]}</h1>
                 </div>
             </div>
-            <div className="lg:flex grid grid-cols-1  gap-3 lg:items-center">
+            <div className="lg:flex grid grid-cols-1  gap-1 lg:gap-3 lg:items-center">
                 <div>
                     <Link href="/calendar"
                         className="btn btn-light border-[#EEEEEE] border bg-white rounded-md py-3 px-4 mt-1  inline-block" // // // // //
@@ -327,7 +327,7 @@ return (
                 <div>
                     <div className="relative">
                         <input type="search"
-                            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+                            className="block min-w-0 grow w-full bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
                         <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -339,7 +339,7 @@ return (
                     </div>
                 </div>
                 <div>
-                    <Link href="#" className="btn btn-primary"
+                    <button className="btn btn-primary mt-2 mb-2 lg:mb-0 lg:mt-0 w-full"
                     onClick={()=> setShowModal2(true)}
                     >
 
@@ -350,7 +350,7 @@ return (
                     </svg>
                     <span className="ml-2">Add New</span>
 
-                    </Link>
+                    </button>
                     <BookAppointModal isOpen={showModal2} onClose={()=> setShowModal2(false)}/>
                 </div>
 
@@ -361,12 +361,12 @@ return (
         {/*
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
-        <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+        <div className="lg:flex grid grid-cols-1 w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full gap-3 lg:gap-0">
             {/* LEFT SIDE TABS */}
-            <div className="w-20   bg-white flex flex-col rounded-2xl items-center z-2">
+            <div className="lg:w-20   bg-white flex lg:flex-col rounded-2xl items-center z-2 gap-3 lg:gap-0 py-2 px-2">
 
                 {["tab1", "tab2"].map((tab) => (
-                <button key={tab} className={`px-4 py-4 mt-3 rounded-lg transition-all ${ activeTab===tab
+                <button key={tab} className={`px-4 py-4 lg:mt-3 rounded-lg transition-all ${ activeTab===tab
                     ? "bg-[#FFE9F4] text-blue-600 font-semibold" : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100" }`}
                     onClick={()=> setActiveTab(tab)}
                     >
@@ -378,7 +378,7 @@ return (
             </div>
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="flex-1 px-6 mt-[60px]">
+            <div className="flex-1 px-1 lg:px-6 lg:mt-[60px]">
                 {activeTab === "tab1" && (
                 <AppointmentTable/>
                 )}
@@ -386,7 +386,7 @@ return (
                 {activeTab === "tab2" && (
                 <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 
-                   <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+                   <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-475px)] ">
                         <table className="min-w-full text-sm text-left">
                             <thead
                                 className="bg-[#F8FAF8] text-[#333333] capitalize text-xs sticky top-0 z-10  whitespace-nowrap">

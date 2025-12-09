@@ -136,3 +136,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   /* width: 250px; */
 
 }
+
+@media (max-width:767px){
+  .fc .fc-toolbar{
+    display: block;
+    text-align: center;
+  }
+}

@@ -76,7 +76,7 @@ export default function WeeklyScheduler() {
         ) : (
           <div className="space-y-2">
             {item.slots.map((slot, slotIndex) => (
-              <div key={slotIndex} className="flex items-center justify-between gap-3">
+              <div key={slotIndex} className="lg:flex items-center lg:justify-between gap-3 grid grid-cols-1">
 
                 {/* Time Inputs */}
                 <div className="flex items-center gap-3">

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import Appointment from "../components/Appointment"
 
 import {  Trash2 } from "lucide-react";
-export default function Documents() {
+export default function AppointmentPage() {
   const [showModal, setShowModal] = useState(false);
 
 const [loading, setLoading] = useState(true);

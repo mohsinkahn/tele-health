@@ -30,7 +30,7 @@ export default function Layout({ children, font = "poppins" }) {
 
                 {/* Main content area */}
                 <main
-                    className={`flex-1 overflow-y-auto 
+                    className={`flex-1 lg:overflow-y-auto w-full 
                     ${hideLayout ? "p-0 bg-white" : "lg:p-6 p-4"} 
                     `}
                     style={

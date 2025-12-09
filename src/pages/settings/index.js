@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
 // import ClientViewComponent from "../components/ClientView";
-import { ChevronRight, Plus, Download, Pencil, Trash, Check, ArrowRight, User } from "lucide-react";
+import { ChevronRight, Plus, Download, Pencil, Trash, Check, ArrowRight, User,X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ErmPlanModal from "@/components/ErmPlanModal";
@@ -551,6 +551,10 @@ export default function Settings() {
         },
     ];
 
+ const [mobileOpen, setMobileOpen] = useState(false);
+
+
+   const tabs = ["tab1","tab2","tab3","tab4","tab5","tab6","tab7"];
 
 
 
@@ -558,7 +562,7 @@ export default function Settings() {
         <>
             <div
                 className="lg:flex lg:justify-between  lg:items-center grid grid-cols-1  lg:pl-35 lg:pr-22 lg:pt-6 lg:absolute w-full">
-                <div className="flex gap-3 items-center">
+                <div className="lg:flex gap-3 items-center grid gri-cols-1">
                     <div className="flex items-center">
                         <div>
                             <h1 className="text-[#6B7280]">Settings</h1>
@@ -572,9 +576,26 @@ export default function Settings() {
                     <div>
                         <h1 className="text-2xl font-[500] text-[#7026A1]">{tabTitles[activeTab]}</h1>
                     </div>
+
+                    <div>
+                 <button
+        className="lg:hidden p-2  bg-[#7026A1] w-full text-white text-left rounded-lg"
+        onClick={() => setMobileOpen(true)}
+      >
+        Open Tabs
+      </button>
+
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
+            </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 mt-4">
                     {tabTitles[activeTab] === "Profile" && (
                         <>
 
@@ -585,7 +606,7 @@ export default function Settings() {
                                     // Handle update logic here
                                     console.log('Update profile:', profileData);
                                 }}
-                                className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-10 py-2 font-medium"
+                                className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-10 py-2 font-medium"
                             >
                                 Update
                             </button>
@@ -600,7 +621,7 @@ export default function Settings() {
                                 // Handle update logic here
                                 console.log('Update security:', securityData);
                             }}
-                            className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
+                            className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
                         >
                             Update
                         </button>
@@ -613,7 +634,7 @@ export default function Settings() {
                                 // Handle update logic here
                                 console.log('Update website:', websiteData);
                             }}
-                            className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
+                            className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
                         >
                             Update
                         </button>
@@ -626,7 +647,7 @@ export default function Settings() {
                                 // Handle update logic here
                                 console.log('Update integration:', integrationData);
                             }}
-                            className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
+                            className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
                         >
                             Update
                         </button>
@@ -767,7 +788,7 @@ export default function Settings() {
                                 // Handle update logic here
                                 console.log('Update billing:', billingData);
                             }}
-                            className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
+                            className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
                         >
                             Update
                         </button>
@@ -826,7 +847,7 @@ export default function Settings() {
                                     // Handle update logic here
                                     // console.log('Update billing:', billingData);
                                 }}
-                                className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
+                                className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
                             >
                                 Update
                             </button>
@@ -840,7 +861,7 @@ export default function Settings() {
                                 // Handle save logic here
                                 console.log('Save templates:', templatesData);
                             }}
-                            className="btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
+                            className="w-full text-left btn btn-primary bg-[#7026A1] hover:bg-[#5a1f7a] text-white rounded-md px-6 py-2 font-medium"
                         >
                             Save
                         </button>
@@ -931,10 +952,39 @@ export default function Settings() {
 
             </div>
 
+  {/* Sliding Off-Canvas */}
+      <div
+        className={`fixed top-30 right-0 h-[75%] w-20 bg-white z-50 transform transition-transform duration-300 rounded-l-lg ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        } flex flex-col gap-3 p-4 overflow-auto`}
+      >
+        <button
+          className="self-end mb-2 text-[#6B7280] px-4 py-7  rounded border-b border-[#E5E7EB]"
+          onClick={() => setMobileOpen(false)}
+        >
+          
+          <X size={18} />
+        </button>
 
-            <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`p-4 rounded-lg transition-all ${
+              activeTab === tab
+                ? "bg-[#FFE9F4] text-blue-600 font-semibold"
+                : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            <span>{tabIcons[tab]}</span>
+          </button>
+        ))}
+      </div>
+
+            <div className="lg:flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full mt-4">
                 {/* LEFT SIDE TABS */}
-                <div className="w-20   bg-white flex flex-col rounded-2xl justify-start items-center h-[100%] z-2">
+                <div className="w-20 hidden   bg-white lg:flex flex-col rounded-2xl justify-start items-center h-[100%] z-2">
                     <Link href="" className="px-4 py-7 border-b border-[#E5E7EB]">
 
                         <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -958,9 +1008,9 @@ export default function Settings() {
                 </div>
 
                 {/* RIGHT SIDE CONTENT */}
-                <div className="flex-1 px-6  lg:mt-[60px]">
+                <div className="flex-1 lg:px-6  lg:mt-[60px]">
                     {activeTab === "tab1" && (
-                        <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-425px)]">
+                        <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-302px)]">
                             <div className="space-y-8 pb-8">
                                 {/* CLINIC SECTION */}
                                 <div className="bg-white rounded-lg p-6">
@@ -972,8 +1022,8 @@ export default function Settings() {
                                             <label className="block text-sm font-medium text-[#202E2D] mb-1">LOGO</label>
                                             <p className="text-xs text-[#6B7280]">This will be shown in your profile view of the clinic.</p>
                                         </div>
-                                        <div className="flex gap-4 items-start">
-                                            <div className="w-48 h-32 bg-[#FFE9F4] rounded-lg flex items-center justify-center border border-[#E5E7EB] flex-shrink-0">
+                                        <div className="lg:flex gap-4 items-start grid grid-cols-1">
+                                            <div className="lg:w-48 h-32 bg-[#FFE9F4] rounded-lg flex items-center justify-center border border-[#E5E7EB] flex-shrink-0">
                                                 {profileData.clinicLogoPreview ? (
                                                     <Image
                                                         src={profileData.clinicLogoPreview}
@@ -1020,8 +1070,8 @@ export default function Settings() {
                                             <label className="block text-sm font-medium text-[#202E2D] mb-1">Cover Image</label>
                                             <p className="text-xs text-[#6B7280]">This will be shown in your profile view of the clinic.</p>
                                         </div>
-                                        <div className="flex gap-4 items-start">
-                                            <div className="w-48 h-32 bg-gray-200 rounded-lg overflow-hidden border border-[#E5E7EB] flex-shrink-0">
+                                        <div className="lg:flex gap-4 items-start grid grid-cols-1">
+                                            <div className="lg:w-48 h-32 bg-gray-200 rounded-lg overflow-hidden border border-[#E5E7EB] flex-shrink-0">
                                                 {profileData.clinicCoverImagePreview ? (
                                                     <Image
                                                         src={profileData.clinicCoverImagePreview}
@@ -1174,7 +1224,7 @@ export default function Settings() {
                                             <label className="block text-sm font-medium text-[#202E2D] mb-1">Profile Picture</label>
                                             <p className="text-xs text-[#6B7280]">This will be displayed as you display picture.</p>
                                         </div>
-                                        <div className="flex gap-4 items-start">
+                                        <div className="flex gap-4 lg:items-start items-center">
                                             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#E5E7EB] bg-gray-200 flex-shrink-0">
                                                 {profileData.doctorProfilePicturePreview ? (
                                                     <Image
@@ -1385,7 +1435,7 @@ export default function Settings() {
                                             <label className="block text-sm font-medium text-[#202E2D] mb-1">Profile Picture</label>
                                             <p className="text-xs text-[#6B7280]">This will be displayed as you display picture.</p>
                                         </div>
-                                        <div className="flex gap-4 items-start">
+                                        <div className="flex gap-4 lg:items-start items-center">
                                             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#E5E7EB] bg-gray-200 flex-shrink-0">
                                                 {profileData.patientProfilePicturePreview ? (
                                                     <Image
@@ -1558,7 +1608,7 @@ export default function Settings() {
                     )}
 
                     {activeTab === "tab3" && (
-                        <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-425px)]">
+                        <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-305px)]">
                             <div className="space-y-8 pb-8">
                                 {/* LOGO SECTION */}
                                 <div className="bg-white rounded-lg p-6 grid lg:grid-cols-[250px_1150px] grid-cols-1 ">
@@ -1871,7 +1921,7 @@ export default function Settings() {
                         </div>
                     )}
                     {activeTab === "tab5" && (
-                        <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-425px)]">
+                        <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-305px)]">
                             <div className="pb-8">
                                 {/* Header with Breadcrumb and Update Button */}
 

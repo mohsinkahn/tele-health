@@ -95,7 +95,7 @@ return (
 
     ) : (
     <>
-     <div className="bg-white back-img2 overflow-auto lg:max-h-[calc(100vh-140px)] max-h-[calc(100vh-425px)] px-5 py-30 mt-4 mx-5 rounded-lg">
+     <div className="bg-white back-img2 overflow-auto lg:max-h-[calc(100vh-140px)] max-h-[calc(100vh-115px)] px-1 py-10 lg:py-30 mt-4 lg:mx-5 mx-0  rounded-lg">
       <StepperForm/>
     </div>
      

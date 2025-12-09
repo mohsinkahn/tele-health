@@ -285,16 +285,16 @@ return (
         {/*
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
-        <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+        <div className="lg:flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full grid grid-cols-1 gap-2 lg:gap-0">
             <AddPaymentModal
                         isOpen={showModal}
                         onClose={() => setShowModal(false)}
                     />
             {/* LEFT SIDE TABS */}
-            <div className="w-20   bg-white flex flex-col rounded-2xl  items-center  z-2">
+            <div className="lg:w-20   bg-white flex lg:flex-col rounded-2xl  items-center py-2 px-2 z-2 mt-3 lg:mt-0 gap-3 lg:gap-0">
 
                 {["tab1", "tab2"].map((tab) => (
-                <button key={tab} className={`px-5 py-3 mt-3 rounded-lg transition-all ${ activeTab===tab
+                <button key={tab} className={`px-5 py-3 lg:mt-3 rounded-lg transition-all ${ activeTab===tab
                     ? "bg-[#FFE9F4] text-blue-600 font-semibold" : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100" }`}
                     onClick={()=> setActiveTab(tab)}
                     >
@@ -306,7 +306,7 @@ return (
             </div>
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="flex-1 px-6 ">
+            <div className="flex-1 lg:px-6 ">
                 {activeTab === "tab1" && (
                 <Payment_Table/>
                 )}
@@ -314,7 +314,7 @@ return (
                 {activeTab === "tab2" && (
                 <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 
-                    <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+                    <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-352px)] ">
                         <table className="min-w-full text-sm text-left">
                             <thead
                                 className="bg-[#F8FAF8] text-[#333333] capitalize text-xs sticky top-0 z-10  whitespace-nowrap">

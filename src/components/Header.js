@@ -1,23 +1,22 @@
 import { Bell, Search, User, Menu,Settings } from "lucide-react";
+import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import TopBar from "./TopBar";
 
-export default function Header({ setIsOpen }) {
+export default function Header({ setIsOpen}) {
+
+
+
+
 return (
 <>
 
-  {/* position: relative;
-  border: 1px solid #cccc;
-  border-radius: 12px;
-  background: white;
-  top: 14px;
-  width: 95%;
-  margin: auto; */}
 
   <header
-    className="flex items-center justify-between bg-[#fff] px-5 w-[95%] z-[3] mx-auto relative top-[16px] border border-[#EEEEEE] rounded-[12px] drop-shadow-[0_0_0_rgba(0,0,0,0.25)] "
+    className="flex items-center justify-between bg-[#fff] px-5 p-2 lg:py-1 lg:w-[95%] w-[98%]  z-[3] mx-auto relative top-[16px] border border-[#EEEEEE] rounded-[12px] drop-shadow-[0_0_0_rgba(0,0,0,0.25)] "
     style={{boxShadow:'0px 0px 2px 0px #355E5B1A'}}>
     {/* Left Section: Hamburger + Logo */}
     <div className="flex items-center gap-3  min-w-0">
@@ -38,9 +37,14 @@ return (
     {/* Search (hidden on mobile, visible on md+) */}
 
     {/* Right Section: Icons */}
-    <div className="flex items-center gap-3 ml-2 sm:gap-3">
+    <div className="flex items-center gap-3 ml-2 sm:gap-3 relative">
+
+     
+
+
+
       {/* calendar */}
-      <Link href="/calendar" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/calendar" className="bg-[#F8F8F8] p-[10px] rounded-lg hidden lg:block">
 
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -50,14 +54,14 @@ return (
 
       </Link>
       {/* setting */}
-      <Link href="/settings" className="bg-[#F8F8F8] p-[10px] rounded-lg ">
+      <Link href="/settings" className="bg-[#F8F8F8] p-[10px] rounded-lg hidden lg:block">
 
       <Settings className=" text-[#6B7280]" width="19" height="18" />
 
       </Link>
 
       {/* Search */}
-      <Link href="/search" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/search" className="bg-[#F8F8F8] p-[10px] rounded-lg hidden lg:block">
 
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -68,7 +72,7 @@ return (
       </Link>
 
       {/* Notification bell */}
-      <Link href="#" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="#" className="bg-[#F8F8F8] p-[10px] rounded-lg ">
 
       <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -81,19 +85,18 @@ return (
       {/* User Icon */}
       {/*
       <User className="w-8 h-8 rounded-full bg-gray-200 p-1 cursor-pointer" /> */}
-      <div className="flex items-center gap-2">
-        <div>
+      <div className="flex items-center gap-2 ">
+        <div className="hidden lg:block">
           <Image src="/avatar.png" alt="avatar" width={40} height={40} className=" rounded-2xl" />
         </div>
-        <div>
+        <div className="hidden lg:block">
           <p className="text-sm font-medium text-[#1F2937]">Ryan Donald</p>
           <p className="text-xs text-[#9CA3AF]">Admin</p>
         </div>
-
       </div>
 
       {/* ✅ Logout icon — now visible on all screens */}
-      <Link href="/login" className="bg-[#F8F8F8] p-[10px] rounded-lg">
+      <Link href="/login" className="bg-[#F8F8F8] p-[10px] rounded-lg hidden lg:block">
 
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

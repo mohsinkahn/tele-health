@@ -108,14 +108,14 @@ const isAllSelected = useMemo(
 [suppliers, selectedRows]
 );
 return (
-<div className=" mx-auto p-4 md:p-6 lg:p-8">
+<div className=" mx-auto px-1 py-2 md:p-6 lg:p-8">
    <DeleteModal
                         isOpen={showModal}
                         onClose={() => setShowModal(false)}
                     />
   <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 
-    <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+    <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-295px)] ">
       <table className="min-w-full text-sm text-left">
         <thead className="bg-[#F8FAF8] text-[#333333] capitalize text-xs sticky top-0 z-10  whitespace-nowrap">
           <tr>

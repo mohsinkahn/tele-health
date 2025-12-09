@@ -169,14 +169,14 @@ export default function App() {
   ];
 
   return (
-    <div className=" bg-gray-50 p-6">
+    <div className=" bg-gray-50 lg:p-6">
       <h1 className="text-2xl font-semibold mb-5 text-[#7026A1]">Dashboard</h1>
 
 
 
 
 
-      <div className=" mx-auto overflow-auto lg:max-h-[calc(100vh-200px)] max-h-[calc(100vh-425px)]">
+      <div className=" mx-auto overflow-auto lg:max-h-[calc(100vh-200px)] max-h-[calc(100vh-165px)]">
 
         <div className="grid lg:grid-cols-4 grid-cols-1 mb-4 gap-3 mt-6">
           <div className="bg-white rounded-lg p-3 lg:col-span-2 border border-gray-100">

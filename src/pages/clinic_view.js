@@ -14,7 +14,7 @@ import Payment_Table from "../components/payment_table"
 
 import Clinic_View_Form from "../components/clinic_view_form_table"
 
-import { ChevronRight,Plus,Download,Pencil,Trash } from "lucide-react";
+import { ChevronRight,Plus,Download,Pencil,Trash,X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -38,6 +38,14 @@ setTimeout(() => setLoading(false), 1500); // simulate delay
 }, [id]);
 
 const [activeTab, setActiveTab] = useState("tab1");
+
+
+
+ const [mobileOpen, setMobileOpen] = useState(false);
+
+
+   const tabs = ["tab1","tab2","tab3","tab4","tab5","tab6"];
+
 
 const tabTitles = {
 tab1: "Profile",
@@ -128,8 +136,8 @@ return (
     <>
 
         <div
-            className="lg:flex lg:justify-between  lg:items-center grid grid-cols-1  lg:pl-35 lg:pr-22 lg:pt-6 lg:absolute w-full">
-            <div className="flex gap-3 items-center">
+            className="lg:flex lg:justify-between  lg:items-center grid grid-cols-1  lg:pl-35 lg:pr-22 lg:pt-6 lg:absolute w-full gap-4 lg:gap-0">
+            <div className="lg:flex gap-3 items-center grid grid-cols-1">
                 <div className="flex items-center">
                     <div>
                         <h1 className="text-[#6B7280]">Clinics</h1>
@@ -139,7 +147,7 @@ return (
                     </div>
 
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center ">
                     <div>
                         <h1 className="text-[#6B7280]">Cross Head Hospital</h1>
                     </div>
@@ -151,9 +159,27 @@ return (
                 <div>
                     <h1 className="text-2xl font-[500] text-[#7026A1]">{tabTitles[activeTab]}</h1>
                 </div>
+                    {/* Mobile toggle button */}
+         
+            <div>
+                 <button
+        className="lg:hidden p-2  bg-[#7026A1] w-full text-white text-left rounded-lg"
+        onClick={() => setMobileOpen(true)}
+      >
+        Open Tabs
+      </button>
+
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
+            </div>
             </div>
           
-            <div className="flex gap-3 items-center">
+            <div className="lg:flex gap-3 items-center grid grid-cols-1">
 
                 {/* ====== TAB 1: Edit + Delete ====== */}
                 {tabTitles[activeTab] === "Profile" && (
@@ -175,7 +201,7 @@ return (
                 <>
                     <div className="relative">
                         <input type="search"
-                            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+                            className="block min-w-0 grow w-full bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
                         <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -200,7 +226,7 @@ return (
                 <>
                     <div className="relative">
                         <input type="search"
-                            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+                            className="block min-w-0 grow w-full bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
                         <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -224,7 +250,7 @@ return (
                 <>
                     <div className="relative">
                         <input type="search"
-                            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+                            className="block min-w-0 grow w-full bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
                         <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -251,7 +277,7 @@ return (
                 <>
                     <div className="relative">
                         <input type="search"
-                            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+                            className="block min-w-0 grow w-full bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
                         <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -278,7 +304,7 @@ return (
                 <>
                     <div className="relative">
                         <input type="search"
-                            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+                            className="block min-w-0 grow w-full bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
                         <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -304,12 +330,43 @@ return (
 
         </div>
 
+  {/* Sliding Off-Canvas */}
+      <div
+        className={`fixed top-30 right-0 h-[75%] w-20 bg-white z-50 transform transition-transform duration-300 rounded-l-lg ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        } flex flex-col gap-3 p-4 overflow-auto`}
+      >
+        <button
+          className="self-end mb-2 text-[#6B7280] px-4 py-7  rounded border-b border-[#E5E7EB]"
+          onClick={() => setMobileOpen(false)}
+        >
+          
+          <X size={18} />
+        </button>
+
+
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`p-4 rounded-lg transition-all ${
+              activeTab === tab
+                ? "bg-[#FFE9F4] text-blue-600 font-semibold"
+                : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            <span>{tabIcons[tab]}</span>
+          </button>
+        ))}
+      </div>
+
+
         {/*
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
-        <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+        <div className="lg:flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
             {/* LEFT SIDE TABS */}
-            <div className="w-20   bg-white flex flex-col rounded-2xl justify-start items-center h-[100%] z-2">
+            <div className="w-20   bg-white lg:flex flex-col rounded-2xl justify-start items-center h-[100%] z-2 hidden">
                 <Link href="" className="px-4 py-7 border-b border-[#E5E7EB]">
 
                 <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,7 +390,7 @@ return (
             </div>
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="flex-1   px-6  lg:mt-[60px]">
+            <div className="flex-1   lg:px-6  lg:mt-[60px] mt-4">
                 {activeTab === "tab1" && (
                 <div className="overflow-auto lg:max-h-[calc(100vh-230px)]  max-h-[calc(100vh-425px)]">
                     <div className=" grid lg:grid-cols-1 grid-cols-1 gap-3">
@@ -342,10 +399,10 @@ return (
 
                             <div className="bg-white rounded-lg p-4">
                                 <div // className="bg-[url('/back.png')] bg-cover bg-no-repeat bg-center"
-                                    className="back-img px-20 py-15 rounded-lg">
+                                    className="back-img lg:px-20 lg:py-15 px-3 py-4 rounded-lg">
                                     <div className="lg:flex lg:justify-between lg:items-center grid grid-cols-1">
                                         <div>
-                                            <p className="text-white text-5xl">
+                                            <p className="text-white lg:text-5xl text-4xl">
                                                 Cross Head <br></br> Hospital
                                             </p>
                                             <p className="text-white my-5">
@@ -357,7 +414,7 @@ return (
                                         </div>
                                         <div>
                                             <Image src="/hos-logo.png" width={250} height={250} alt="hospital logo"
-                                                className="object-contain mx-auto rounded-full" />
+                                                className="object-contain lg:mx-auto mt-4 rounded-full" />
                                         </div>
                                     </div>
 
@@ -403,7 +460,7 @@ return (
                                         </div>
 
                                     </div>
-                                    <div className="grid lg:grid-cols-3 grid-cols-1 my-10 mx-30 ">
+                                    <div className="grid lg:grid-cols-3 grid-cols-1 my-10 lg:mx-30 ">
                                         <div className="flex gap-2 items-center pt-3 ">
                                             <div>
                                                 <div className="bg-white rounded-lg p-4">
@@ -535,17 +592,36 @@ return (
                 )}
 
                 {activeTab === "tab2" && (
-                <Doctor />
+                <div className="bg-white px-2 py-2 rounded-xl shadow-custom border border-gray-100">
+
+                    
+                  <div className="overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+                 <Doctor />
+                  </div>  
+                  </div>
                 )}
 
                 {activeTab === "tab3" && (
-                <Pateint />
+                    <div className="bg-white px-2 py-2 rounded-xl shadow-custom border border-gray-100">
+
+                    
+                  <div className="overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+                 <Pateint />
+                  </div>  
+                  </div>
+                
                 )}
                 {activeTab === "tab4" && (
                 <Clinic_View_Appoint_Table />
                 )}
                 {activeTab === "tab5" && (
-                <Payment_Table />
+                 <div className="bg-white px-2 py-2 rounded-xl shadow-custom border border-gray-100">
+   
+                  <div className="overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+                 <Payment_Table />
+                  </div>  
+                  </div>
+                
                 )}
                 {activeTab === "tab6" && (
                 <Clinic_View_Form />

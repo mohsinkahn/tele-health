@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 // import ClientViewComponent from "../components/ClientView";
-import { ChevronRight,Plus,Download,Pencil,Trash } from "lucide-react";
+import { ChevronRight,Plus,Download,Pencil,Trash,X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import DocViewPicker from "../components/doc_view_picker";
@@ -114,6 +114,12 @@ complaint: "Fainting",
 );
 const [selectedRows, setSelectedRows] = useState([]);
 
+ const [mobileOpen, setMobileOpen] = useState(false);
+
+
+   const tabs = ["tab1","tab2","tab3","tab4","tab5","tab6"];
+
+
 return (
 <>
   {loading ? (
@@ -137,32 +143,9 @@ return (
   ) : (
   <>
 
-    {/* <div className="flex gap-3 items-center lg:pl-8 lg:pr-6 lg:pt-6">
-      <div className="flex items-center">
-        <div>
-          <h1 className="text-[#6B7280]">Doctors</h1>
-        </div>
-        <div>
-          <ChevronRight className="text-[#6B7280] w-5" />
-        </div>
-
-      </div>
-      <div className="flex items-center">
-        <div>
-          <h1 className="text-[#6B7280]">Jane Dominique</h1>
-        </div>
-        <div>
-          <ChevronRight className="text-[#6B7280] w-5" />
-        </div>
-
-      </div>
-      <div>
-        <h1 className="text-2xl font-[500] text-[#7026A1]">Details</h1>
-      </div>
-    </div> */}
     <div
                 className="lg:flex lg:justify-between  lg:items-center grid grid-cols-1  lg:pl-35 lg:pr-22 lg:pt-6 lg:absolute w-full">
-                <div className="flex gap-3 items-center">
+                <div className="lg:flex gap-3 items-center grid grid-cols-1">
                     <div className="flex items-center">
                         <div>
                             <h1 className="text-[#6B7280]">Doctors</h1>
@@ -184,8 +167,25 @@ return (
                     <div>
                         <h1 className="text-2xl font-[500] text-[#7026A1]">{tabTitles[activeTab]}</h1>
                     </div>
+                    
+            <div>
+                 <button
+        className="lg:hidden p-2 m-2 bg-[#7026A1] w-full text-white text-left rounded-lg"
+        onClick={() => setMobileOpen(true)}
+      >
+        Open Tabs
+      </button>
+
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
+            </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="lg:flex items-center gap-3 grid grid-cols-1 mt-3 lg:mt-0">
                 {tabTitles[activeTab] === "Details" && (
                 <>
                     <Link href="#" className="btn btn-light border-[#EEEEEE] bg-white rounded-md p-3">
@@ -304,12 +304,43 @@ return (
     
      </div>
 
+
+  {/* Sliding Off-Canvas */}
+      <div
+        className={`fixed top-30 right-0 h-[75%] w-20 bg-white z-50 transform transition-transform duration-300 rounded-l-lg ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        } flex flex-col gap-3 p-4 overflow-auto`}
+      >
+        <button
+          className="self-end mb-2 text-[#6B7280] px-4 py-7  rounded border-b border-[#E5E7EB]"
+          onClick={() => setMobileOpen(false)}
+        >
+          
+          <X size={18} />
+        </button>
+
+
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`p-4 rounded-lg transition-all ${
+              activeTab === tab
+                ? "bg-[#FFE9F4] text-blue-600 font-semibold"
+                : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            <span>{tabIcons[tab]}</span>
+          </button>
+        ))}
+      </div>
+
     {/*
     <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
-    <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+    <div className="lg:flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
       {/* LEFT SIDE TABS */}
-      <div className="w-20   bg-white flex flex-col rounded-2xl justify-start items-center h-[100%] z-2 px-4">
+      <div className="w-20 hidden   bg-white lg:flex flex-col rounded-2xl justify-start items-center h-[100%] z-2 px-4">
                 <Link href="" className="px-4 py-7 border-b border-[#E5E7EB]">
 
                 <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,7 +364,7 @@ return (
             </div>
 
       {/* RIGHT SIDE CONTENT */}
-      <div className="flex-1 px-6  lg:mt-[60px]">
+      <div className="flex-1 lg:px-6  lg:mt-[60px] mt-4">
         {activeTab === "tab1" && (
         <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-425px)]">
           <div className=" grid lg:grid-cols-4 grid-cols-1 gap-3">
@@ -683,7 +714,13 @@ return (
         )}
 
         {activeTab === "tab2" && (
-        <Patient/>
+         <div className="bg-white px-2 py-2 rounded-xl shadow-custom border border-gray-100">
+                                
+                                               <div className="overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-435px)] ">
+                                             <Patient/>
+                                               </div>  
+                                               </div> 
+        
         )}
 
         {activeTab === "tab3" && (

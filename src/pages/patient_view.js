@@ -2,9 +2,10 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 // import ClientViewComponent from "../components/ClientView";
-import { ChevronRight,Plus,Download,Pencil,Trash,ArrowBigLeft } from "lucide-react";
+import { ChevronRight,Plus,Download,Pencil,Trash,ArrowBigLeft,X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+// import Header from "@/components/Header";
 import DocViewPicker from "../components/doc_view_picker";
 import DocTimeSlots from "../components/doc_timeslots";
 import BookAppointModal from "../components/BookAppointModal";
@@ -23,6 +24,7 @@ import PatientPrescriptionTable from "@/components/patient_prescription_table";
 import PatientAiNotesTable from "@/components/patient_ai_notes_table";  
 import PatientAppointmentTable from "@/components/patient_appointment_table";
 import PatientInsuranceClaimTable from "@/components/patient_insurance_claim_table";
+// import Header from "@/components/Header";
 
 export default function PatientViewPage() {
 
@@ -133,6 +135,12 @@ setTimeout(() => setLoading(false), 1500); // simulate delay
 
 const [activeTab, setActiveTab] = useState("tab1");
 
+ const [mobileOpen, setMobileOpen] = useState(false);
+
+
+   const tabs = ["tab1","tab2","tab3","tab4","tab5","tab6","tab7","tab8","tab9"];
+
+
 const [suppliers] = useState(
 Array(40).fill({
 id: "#547388",
@@ -166,10 +174,9 @@ return (
     </div>
     ) : (
     <>
-
         <div
-            className="lg:flex lg:justify-between  lg:items-center grid grid-cols-1  lg:pl-35 lg:pr-22 lg:pt-6 lg:absolute w-full">
-            <div className="flex gap-3 items-center">
+            className="lg:flex lg:justify-between  lg:items-center grid grid-cols-1  lg:pl-35 lg:pr-22 lg:pt-6 lg:absolute w-full mb-4 lg:mb-0 gap-4 lg:gap-0">
+            <div className="lg:flex gap-3 items-center grid grid-cols-1">
                 <div className="flex items-center">
                     <div>
                         <h1 className="text-[#6B7280]">Patient list</h1>
@@ -191,9 +198,28 @@ return (
                 <div>
                     <h1 className="text-2xl font-[500] text-[#7026A1]">{tabTitles[activeTab]}</h1>
                 </div>
+                {/* Mobile toggle button */}
+         
+            <div>
+                 <button
+        className="lg:hidden p-2 m-2 bg-[#7026A1] w-full text-white text-left rounded-lg"
+        onClick={() => setMobileOpen(true)}
+      >
+        Open Tabs
+      </button>
+
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
+            </div>
+
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="lg:flex items-center gap-3 grid grid-cols-1">
                 {tabTitles[activeTab] === "Profile" && (
                 <>
                     <Link href="#" className="btn btn-light border-[#EEEEEE] bg-white rounded-md p-3">
@@ -220,7 +246,7 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="/psy_planfouhn" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="/psy_plan" className="btn btn-primary" // onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -525,7 +551,7 @@ return (
                     <span className="pl-2 text-[#7026A1]">Send Records</span>
 
                     </Link>
-                       <Link href="#" className="btn btn-primary" // onClick={()=> setShowModal(true)}
+                       <Link href="/insurance" className="btn btn-primary" // onClick={()=> setShowModal(true)}
                     >
 
                     <Plus className="inline-block w-5 text-white" />
@@ -541,13 +567,44 @@ return (
 
         </div>
 
+  {/* Sliding Off-Canvas */}
+      <div
+        className={`fixed top-30 right-0 h-[75%] w-20 bg-white z-50 transform transition-transform duration-300 rounded-l-lg ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        } flex flex-col gap-3 p-4 overflow-auto`}
+      >
+        <button
+          className="self-end mb-2 text-[#6B7280] px-4 py-7  rounded border-b border-[#E5E7EB]"
+          onClick={() => setMobileOpen(false)}
+        >
+          
+          <X size={18} />
+        </button>
+
+
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`p-4 rounded-lg transition-all ${
+              activeTab === tab
+                ? "bg-[#FFE9F4] text-blue-600 font-semibold"
+                : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100"
+            }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            <span>{tabIcons[tab]}</span>
+          </button>
+        ))}
+      </div>
+
+
         {/*
         <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" /> */}
 
-        <div className="flex w-full lg:pl-8 lg:pr-6 lg:pt-6 h-full">
+        <div className="lg:flex w-full lg:pl-8 lg:pr-6 lg:pt-6 lg:h-full grid grid-cols-1 gap-3 lg:gap-0">
             {/* LEFT SIDE TABS */}
-            <div className="w-20   bg-white flex flex-col rounded-2xl justify-start items-center h-[100%] z-2">
-                <Link href="" className="px-4 py-7 border-b border-[#E5E7EB]">
+            <div className="lg:w-20 lg:block hidden   bg-white lg:flex  lg:flex-col gap-3 lg:gap-0 rounded-2xl justify-start  lg:h-[100%] z-2 overflow-auto w-full items-center">
+                <Link href="" className="px-4 py-7 border-b border-[#E5E7EB] ">
 
                 <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -558,7 +615,7 @@ return (
                 </Link>
 
                 {["tab1", "tab2", "tab3", "tab4", "tab5", "tab6", "tab7", "tab8", "tab9"].map((tab) => (
-                <button key={tab} className={`p-4 mt-3 rounded-lg transition-all ${ activeTab===tab
+                <button key={tab} className={`p-4 lg:mt-3 rounded-lg transition-all ${ activeTab===tab
                     ? "bg-[#FFE9F4] text-blue-600 font-semibold" : "bg-[#F8F8F8] text-gray-700 hover:bg-gray-100" }`}
                     onClick={()=> setActiveTab(tab)}
                     >
@@ -570,9 +627,9 @@ return (
             </div>
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="flex-1 px-6  lg:mt-[60px]">
+            <div className="flex-1 lg:px-6  lg:mt-[60px]">
                 {activeTab === "tab1" && (
-                <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-425px)]">
+                <div className="overflow-auto lg:max-h-[calc(100vh-230px)] max-h-[calc(100vh-555px)]">
                     <div className=" grid lg:grid-cols-5 grid-cols-1 gap-3">
                         <div className="bg-white rounded-lg p-4 lg:col-span-3">
                             <div className="flex justify-between items-center border-[#E5E7EB] border-b">
@@ -618,7 +675,7 @@ return (
                                                 <p className="text-[#A1A5AA] mt-1 text-sm">Something@gamil.com</p>
                                             </div>
                                         </div>
-                                        <div className="flex gap-2 items-center pt-3 pb-3 pr-6">
+                                        <div className="flex gap-2 items-center pt-3 pb-3 pr-6 pl-6 lg:pl-0">
                                             <div>
                                                 <div className="bg-white rounded-lg p-4">
 
@@ -658,7 +715,7 @@ return (
                                                 <p className="text-[#A1A5AA] mt-1 text-sm">231-2324-2324</p>
                                             </div>
                                         </div>
-                                        <div className="flex gap-2 items-center pt-3 pb-3 pr-6">
+                                        <div className="flex gap-2 items-center pt-3 pb-3 pr-6 pl-6 lg:pl-0">
                                             <div>
                                                 <div className="bg-white rounded-lg p-4">
 
@@ -696,7 +753,7 @@ return (
                                                 <p className="text-[#A1A5AA] mt-1 text-sm">745798564</p>
                                             </div>
                                         </div>
-                                        <div className="flex gap-2 items-center pt-3 pb-3 pr-6">
+                                        <div className="flex gap-2 items-center pt-3 pb-3 pr-6 pl-6 lg:pl-0">
                                             <div>
                                                 <div className="bg-white rounded-lg p-4">
 
@@ -851,7 +908,7 @@ return (
                             />
                             <div className="grid lg:grid-cols-4 grid-cols-1 gap-3">
                                 <div className="bg-[#F8FAF8] rounded-2xl mt-3  pt-4 pb-4 px-4">
-                                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
+                                    <div className="grid lg:grid-cols-2 grid-cols-2 gap-12 items-center">
 
                                         <div>
                                             <h2 className="text-[#6B7280] text-sm">Height</h2>
@@ -879,7 +936,7 @@ return (
                                     </div>
                                 </div>
                                 <div className="bg-[#F8FAF8] rounded-2xl mt-3  pt-4 pb-4 px-4">
-                                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
+                                    <div className="grid lg:grid-cols-2 grid-cols-2 gap-12 items-center">
 
                                         <div>
                                             <h2 className="text-[#6B7280] text-sm">Weight</h2>
@@ -907,7 +964,7 @@ return (
                                     </div>
                                 </div>
                                 <div className="bg-[#F8FAF8] rounded-2xl mt-3  pt-4 pb-4 px-4">
-                                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
+                                    <div className="grid lg:grid-cols-2 grid-cols-2 gap-12 items-center">
 
                                         <div>
                                             <h2 className="text-[#6B7280] text-sm">Blood Pressure</h2>
@@ -935,7 +992,7 @@ return (
                                     </div>
                                 </div>
                                 <div className="bg-[#F8FAF8] rounded-2xl mt-3  pt-4 pb-4 px-4">
-                                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
+                                    <div className="grid lg:grid-cols-2 grid-cols-2 gap-12 items-center">
 
                                         <div>
                                             <h2 className="text-[#6B7280] text-sm">Heart Rate</h2>
@@ -1238,7 +1295,13 @@ return (
                 <PatientRecommendationTable/>
                 )}
                 {activeTab === "tab4" && (
-                <Document    />
+                     <div className="bg-white px-2 py-2 rounded-xl shadow-custom border border-gray-100">
+                       
+                                      <div className="overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-545px)] ">
+                                    <Document    />
+                                      </div>  
+                                      </div>
+                
                 )}
                 {activeTab === "tab5" && (
                 <PatientPrescriptionTable/>

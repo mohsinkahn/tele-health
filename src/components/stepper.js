@@ -227,7 +227,7 @@ const plans = {
     <div className=" flex items-center justify-center ">
       
 
-      <main className="relative z-10 w-full max-w-4xl p-6 ">
+      <main className="relative z-10 w-full max-w-4xl p-1 ">
         
         <div className="mb-5">
             <div className="mb-5">
@@ -258,7 +258,7 @@ const plans = {
             <div className="bg-white rounded-2xl shadow-xl ">
 
             
-          <div className="p-6">
+          <div className="px-3 py-4">
             <h2 className="text-xl font-medium text-[#7026A1] mb-4">{STEPS.find(s => s.id === step).title}</h2>
 
             {/* Multi-step content */}
@@ -412,8 +412,8 @@ const plans = {
               )}
 
               {step === 3 && (
-                <div className="p-4 ">
-                   <div className="p-6  ">
+                <div className="p-2 ">
+                   <div className="p-1  ">
       {/* Tabs */}
       {/* background: #EDF0EE;
     width: fit-content;

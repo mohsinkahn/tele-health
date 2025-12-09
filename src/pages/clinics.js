@@ -39,7 +39,7 @@ return (
       <div className="flex gap-3 md:flex-row flex-col md:items-center md:mt-0 mt-3">
         <div className="relative">
           <input type="search"
-            className="block min-w-0 grow bg-white py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
+            className="block min-w-0 grow bg-white w-full py-[7px] pr-3 pl-8  text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 border-[#E6E4F0] border-1 rounded-lg" />
           <div className="absolute top-[20px] left-2 -translate-y-1/2  pointer-events-none">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

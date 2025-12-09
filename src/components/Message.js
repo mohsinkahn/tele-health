@@ -91,7 +91,7 @@ const [text, setText] = useState("");
 const activeConv = conversations.find((c) => c.id === activeId) || conversations[0];
 
 return (
-<div className="min-h-screen bg-gray-50 p-6  overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+<div className="min-h-screen bg-gray-50 px-1 py-2  overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-295px)] ">
   <div className=" mx-auto bg-white rounded-xl shadow-sm border border-gray-100 ">
     {/* Header (optional) */}
     {/* <div className="p-4 border-b border-gray-100">
@@ -104,9 +104,9 @@ return (
       </div>
     </div> */}
 
-    <div className="lg:flex grid grid-cols-1 my-par">
+    <div className="lg:flex grid grid-cols-1 lg:my-par">
       {/* Left: conversations */}
-      <aside className="w-80 md:w-96 border-r border-gray-100 p-4">
+      <aside className="lg:w-80 w-full md:w-96 border-r border-gray-100 p-2 lg:p-4">
         <div className="mb-4">
           <div className="relative">
             <input value={query} onChange={(e)=> setQuery(e.target.value)}
@@ -122,7 +122,7 @@ return (
           </div>
         </div>
 
-        <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+        <div className="space-y-3 max-h-[25vh] lg:max-h-[60vh] overflow-y-auto pr-2">
           {conversations.map((c) => (
           <button key={c.id} onClick={()=> setActiveId(c.id)}
             className={`w-full text-left flex items-start gap-3 p-3 rounded-lg transition-colors ${
@@ -148,7 +148,7 @@ return (
       </aside>
 
       {/* Right: chat */}
-      <main className="flex-1 p-6">
+      <main className="flex-1 lg:p-6 px-5 py-4">
         <div className="flex items-center justify-between mb-6 border-b border-[#f6f3f4] pb-4">
           <div>
             <h3 className="text-lg font-medium text-gray-800">{activeConv.name}</h3>
@@ -157,7 +157,7 @@ return (
           <div className="text-sm text-pink-600">View Profile</div>
         </div>
 
-        <div className="bg-white   rounded-xl p-6 mb-4  max-h-[50vh] overflow-y-auto">
+        <div className="bg-white   rounded-xl p-6 mb-4  max-h-[23vh] lg:max-h-[50vh] overflow-y-auto">
           <div className="space-y-6">
 
             {messages.map((m) => (
@@ -207,7 +207,7 @@ return (
           className="flex-1 border-none outline-none text-sm placeholder-gray-400"
           />
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center lg:gap-2">
             <button className="p-2 rounded-md hover:bg-gray-50">
 
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

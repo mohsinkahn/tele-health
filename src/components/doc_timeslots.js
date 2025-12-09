@@ -15,7 +15,7 @@ export default function DocTimeSlots() {
   return (
     <div className="w-full mt-4">
       {/* Grid of Time Slots */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid lg:grid-cols-5 grid-cols-3 gap-4">
         {timeSlots.map((time, index) => (
           <button
             key={index}

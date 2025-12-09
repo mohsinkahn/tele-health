@@ -102,7 +102,7 @@ return (
 
     <div className="bg-white rounded-xl shadow-custom border border-gray-100 p-4 flex flex-col">
 
-        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] ">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-505px)] ">
             <table className="min-w-full text-sm text-left">
                 <thead className="bg-[#F8FAF8] text-[#333333] capitalize text-xs sticky top-0 z-10  whitespace-nowrap">
                     <tr>

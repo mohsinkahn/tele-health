@@ -129,7 +129,7 @@ return (
 
     ) : (
     <>
-     <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] px-5 py-5 mt-4 mx-5 rounded-lg">
+     <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] px-5 py-5 mt-4 lg:mx-5 mx-0 rounded-lg">
        <FullCalendar
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
       initialView="dayGridMonth"

@@ -1,14 +1,20 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { X, Home, Users, } from "lucide-react";
+import { X, Home, Users,MessageSquare,DollarSignIcon,Handshake,Settings,UserRoundSearchIcon,Calendar,LogOut,HospitalIcon,UserRoundPenIcon } from "lucide-react";
 
 const menuItems = [
     { name: "Dashboard", href: "/", icon: Home },
-    { name: "Clinics", href: "/clinics", icon: Users },
+    { name: "Clinics", href: "/clinics", icon: HospitalIcon },
 
     {
         name: "Doctors",
         href: "/doctors",
+        icon: UserRoundPenIcon
+    },
+
+    {
+        name: "Patients",
+        href: "/patients",
         icon: ({ color }) => (
             <svg
                 width={21}
@@ -25,82 +31,18 @@ const menuItems = [
                     strokeWidth="1.5"
                 />
             </svg>
-        )
-    },
-
-    {
-        name: "Patients",
-        href: "/patients",
-        icon: ({ color }) => (
-            <svg
-                width={21}
-                height={20}
-                viewBox="0 0 21 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M17.5833 6.06478L10.5 9.99996M10.5 9.99996L3.41664 6.06478M10.5 9.99996L10.5 17.9167M18 13.3821V6.61786C18 6.33232 18 6.18956 17.9579 6.06222C17.9207 5.94958 17.8599 5.84618 17.7795 5.75893C17.6886 5.66032 17.5638 5.59099 17.3142 5.45232L11.1475 2.02639C10.9112 1.89509 10.793 1.82944 10.6679 1.80371C10.5571 1.78093 10.4429 1.78093 10.3321 1.80371C10.207 1.82944 10.0888 1.89509 9.85248 2.02639L3.68581 5.45232C3.43621 5.59099 3.3114 5.66032 3.22053 5.75894C3.14013 5.84618 3.07929 5.94958 3.04207 6.06223C3 6.18956 3 6.33233 3 6.61786V13.3821C3 13.6677 3 13.8104 3.04207 13.9378C3.07929 14.0504 3.14013 14.1538 3.22053 14.241C3.3114 14.3397 3.43621 14.409 3.68581 14.5477L9.85248 17.9736C10.0888 18.1049 10.207 18.1705 10.3321 18.1963C10.4429 18.219 10.5571 18.219 10.6679 18.1963C10.793 18.1705 10.9112 18.1049 11.1475 17.9736L17.3142 14.5477C17.5638 14.409 17.6886 14.3397 17.7795 14.241C17.8599 14.1538 17.9207 14.0504 17.9579 13.9378C18 13.8104 18 13.6677 18 13.3821Z"
-                    stroke={color}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M14.25 7.91667L6.75 3.75"
-                    stroke={color}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
 
         )
     },
     {
         name: "Messages",
         href: "/messages",
-        icon: ({ color }) => (
-            <svg
-                width={21}
-                height={20}
-                viewBox="0 0 21 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M17.5833 6.06478L10.5 9.99996M10.5 9.99996L3.41664 6.06478M10.5 9.99996L10.5 17.9167M18 13.3821V6.61786C18 6.33232 18 6.18956 17.9579 6.06222C17.9207 5.94958 17.8599 5.84618 17.7795 5.75893C17.6886 5.66032 17.5638 5.59099 17.3142 5.45232L11.1475 2.02639C10.9112 1.89509 10.793 1.82944 10.6679 1.80371C10.5571 1.78093 10.4429 1.78093 10.3321 1.80371C10.207 1.82944 10.0888 1.89509 9.85248 2.02639L3.68581 5.45232C3.43621 5.59099 3.3114 5.66032 3.22053 5.75894C3.14013 5.84618 3.07929 5.94958 3.04207 6.06223C3 6.18956 3 6.33233 3 6.61786V13.3821C3 13.6677 3 13.8104 3.04207 13.9378C3.07929 14.0504 3.14013 14.1538 3.22053 14.241C3.3114 14.3397 3.43621 14.409 3.68581 14.5477L9.85248 17.9736C10.0888 18.1049 10.207 18.1705 10.3321 18.1963C10.4429 18.219 10.5571 18.219 10.6679 18.1963C10.793 18.1705 10.9112 18.1049 11.1475 17.9736L17.3142 14.5477C17.5638 14.409 17.6886 14.3397 17.7795 14.241C17.8599 14.1538 17.9207 14.0504 17.9579 13.9378C18 13.8104 18 13.6677 18 13.3821Z"
-                    stroke={color}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-
-
-        )
+        icon: MessageSquare
     },
     {
         name: "Payments",
         href: "/payments",
-        icon: ({ color }) => (
-            <svg
-                width={21}
-                height={20}
-                viewBox="0 0 21 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M12.1667 9.16669H7.16668M8.83334 12.5H7.16668M13.8333 5.83335H7.16668M17.1667 5.66669V14.3334C17.1667 15.7335 17.1667 16.4336 16.8942 16.9683C16.6545 17.4387 16.2721 17.8212 15.8017 18.0609C15.2669 18.3334 14.5668 18.3334 13.1667 18.3334H7.83334C6.43321 18.3334 5.73315 18.3334 5.19837 18.0609C4.72796 17.8212 4.34551 17.4387 4.10583 16.9683C3.83334 16.4336 3.83334 15.7335 3.83334 14.3334V5.66669C3.83334 4.26656 3.83334 3.56649 4.10583 3.03171C4.34551 2.56131 4.72796 2.17885 5.19837 1.93917C5.73315 1.66669 6.43321 1.66669 7.83334 1.66669H13.1667C14.5668 1.66669 15.2669 1.66669 15.8017 1.93917C16.2721 2.17885 16.6545 2.56131 16.8942 3.03171C17.1667 3.56649 17.1667 4.26656 17.1667 5.66669Z"
-                    stroke={color}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-
-        )
+        icon: DollarSignIcon
     },
 
     {
@@ -129,24 +71,27 @@ const menuItems = [
     {
         name: "Appointments",
         href: "/appointments",
-        icon: ({ color }) => (
-            <svg
-                width={19}
-                height={16}
-                viewBox="0 0 19 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M11.1665 3.83331H13.1142C13.318 3.83331 13.42 3.83331 13.5159 3.85634C13.6009 3.87675 13.6822 3.91042 13.7567 3.95611C13.8408 4.00765 13.9129 4.07971 14.057 4.22384L17.4426 7.60946C17.5868 7.75358 17.6588 7.82564 17.7104 7.90974C17.7561 7.9843 17.7897 8.06559 17.8101 8.15062C17.8332 8.24653 17.8332 8.34844 17.8332 8.55226V10.9166C17.8332 11.3049 17.8332 11.4991 17.7697 11.6522C17.6852 11.8564 17.5229 12.0186 17.3187 12.1032C17.1656 12.1666 16.9715 12.1666 16.5832 12.1666M12.4165 12.1666H11.1665M11.1665 12.1666V3.99998C11.1665 3.06656 11.1665 2.59985 10.9848 2.24333C10.8251 1.92973 10.5701 1.67476 10.2565 1.51497C9.89997 1.33331 9.43326 1.33331 8.49984 1.33331H3.83317C2.89975 1.33331 2.43304 1.33331 2.07652 1.51497C1.76292 1.67476 1.50795 1.92973 1.34816 2.24333C1.1665 2.59985 1.1665 3.06656 1.1665 3.99998V10.5C1.1665 11.4205 1.9127 12.1666 2.83317 12.1666M11.1665 12.1666H7.83317M7.83317 12.1666C7.83317 13.5474 6.71388 14.6666 5.33317 14.6666C3.95246 14.6666 2.83317 13.5474 2.83317 12.1666M7.83317 12.1666C7.83317 10.7859 6.71388 9.66665 5.33317 9.66665C3.95246 9.66665 2.83317 10.7859 2.83317 12.1666M16.5832 12.5833C16.5832 13.7339 15.6504 14.6666 14.4998 14.6666C13.3492 14.6666 12.4165 13.7339 12.4165 12.5833C12.4165 11.4327 13.3492 10.5 14.4998 10.5C15.6504 10.5 16.5832 11.4327 16.5832 12.5833Z"
-                    stroke={color}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-
-        )
+        icon: Handshake
+    },
+    {
+        name: "Settings",
+        href: "/settings",
+        icon: Settings
+    },
+    {
+        name: "Find Doctor",
+        href: "/search",
+        icon: UserRoundSearchIcon
+    },
+    {
+        name: "Calendar",
+        href: "/calendar",
+        icon: Calendar
+    },
+    {
+        name: "Logout",
+        href: "/login",
+        icon: LogOut
     },
     
 
@@ -157,12 +102,12 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
     return (
         <aside
-            className={`fixed p-[10px] custom-shadow block md:hidden  top-[80px] lg:top-[93px] lg:left-[15px] left-[0px] h-full lg:max-h-[calc(100vh-100px)]    lg:overflow-y-auto   md:w-[111px] w-64 bg-[#355E5B] text-white  flex-col transform transition-transform duration-300
+            className={`fixed p-[10px] custom-shadow block md:hidden  top-[80px] lg:top-[93px] lg:left-[15px] left-[0px] h-full lg:max-h-[calc(100vh-100px)]    lg:overflow-y-auto   md:w-[111px] w-64 bg-[#7026A1] text-white  flex-col transform transition-transform duration-300
             ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 z-[30] lg:z-0 `} 
             style={{ borderTopLeftRadius: "12px",paddingRight:"18px" }}
         >
             {/* Mobile close button */}
-            <div className="flex items-center justify-between md:justify-center text-lg mt-[10px] pr-[10px] md:mt-0 md:pr-0">
+            <div className="flex items-center justify-end mb-4 md:justify-center text-lg mt-[10px] pr-[10px] md:mt-0 md:pr-0">
                 <button className="md:hidden" onClick={() => setIsOpen(false)}>
                     <X className="w-6 h-6 text-white" />
                 </button>
