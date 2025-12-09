@@ -488,7 +488,7 @@ export default function AddInsurancePage() {
             {/* - 1a */}
             <section className="mb-8">
               <div className="form-group flex-col flex gap-2">
-                <label htmlFor="insuredIdNumber" className="text-[#202E2D]">- 1a - INSURED'S I.D. NUMBER</label>
+                <label htmlFor="insuredIdNumber" className="text-[#202E2D]">- 1a - INSURED&apos;S I.D. NUMBER</label>
                 <input
                   id="insuredIdNumber"
                   name="insuredIdNumber"
@@ -503,7 +503,7 @@ export default function AddInsurancePage() {
             {/* - 2 */}
             <section className="mb-8">
               <div className="form-group flex-col flex gap-2">
-                <label htmlFor="patientName" className="text-[#202E2D]">- 2 - PATIENT'S NAME (Last Name, First Name, Middle Initial)</label>
+                <label htmlFor="patientName" className="text-[#202E2D]">- 2 - PATIENT&apos;S NAME Last Name, First Name, Middle Initial</label>
                 <input
                   id="patientName"
                   name="patientName"
@@ -519,7 +519,7 @@ export default function AddInsurancePage() {
             <section className="mb-8">
               <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="patientBirthDate" className="text-[#202E2D]">- 3 - PATIENT'S BIRTH DATE (MM DD YY)</label>
+                  <label htmlFor="patientBirthDate" className="text-[#202E2D]">- 3 - PATIENT&apos;S BIRTH DATE MM DD YY</label>
                   <input
                     id="patientBirthDate"
                     name="patientBirthDate"
@@ -553,7 +553,7 @@ export default function AddInsurancePage() {
             {/* - 4 */}
             <section className="mb-8">
               <div className="form-group flex-col flex gap-2">
-                <label htmlFor="insuredName" className="text-[#202E2D]">- 4 - INSURED'S NAME (Last Name, First Name, Middle Initial)</label>
+                <label htmlFor="insuredName" className="text-[#202E2D]">- 4 - INSURED&apos;S NAME Last Name, First Name, Middle Initial</label>
                 <input
                   id="insuredName"
                   name="insuredName"
@@ -592,7 +592,7 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 6 - PATIENT'S ADDRESS
+                - 6 - PATIENT&apos;S ADDRESS
               </h2>
               
               <div className="space-y-6">
@@ -661,7 +661,7 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 7 - INSURED'S ADDRESS
+                - 7 - INSURED&apos;S ADDRESS
               </h2>
               
               <div className="space-y-6">
@@ -772,12 +772,12 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 9 - OTHER INSURED'S INFORMATION
+                - 9 - OTHER INSURED&apos;S INFORMATION
               </h2>
               
               <div className="space-y-6">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="otherInsuredName" className="text-[#202E2D]">OTHER INSURED'S NAME (Last Name, First Name, Middle Initial)</label>
+                  <label htmlFor="otherInsuredName" className="text-[#202E2D]">OTHER INSURED&apos;S NAME Last Name First Name Middle Initial</label>
                   <input
                     id="otherInsuredName"
                     name="otherInsuredName"
@@ -789,7 +789,7 @@ export default function AddInsurancePage() {
                 </div>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                   <div className="form-group flex-col flex gap-2">
-                    <label htmlFor="otherInsuredPolicyOrGroupNumber" className="text-[#202E2D]">9a - OTHER INSURED'S POLICY OR GROUP NUMBER</label>
+                    <label htmlFor="otherInsuredPolicyOrGroupNumber" className="text-[#202E2D]">9a - OTHER INSURED&apos;S POLICY OR GROUP NUMBER</label>
                     <input
                       id="otherInsuredPolicyOrGroupNumber"
                       name="otherInsuredPolicyOrGroupNumber"
@@ -841,14 +841,14 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 10 - PATIENT'S CONDITION RELATED TO
+                - 10 - PATIENT&apos;S CONDITION RELATED TO
               </h2>
               
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm text-[#202E2D] mb-2 block font-medium">a. EMPLOYMENT (Current or Previous):</label>
+                      <label className="text-sm text-[#202E2D] mb-2 block font-medium">a. EMPLOYMENT Current or Previous:</label>
                       <div className="flex flex-wrap gap-4">
                         {['YES', 'NO'].map(option => (
                           <label key={option} className="flex items-center gap-2 cursor-pointer">
@@ -935,12 +935,12 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 11 - INSURED'S POLICY INFORMATION
+                - 11 - INSURED&apos;S POLICY INFORMATION
               </h2>
               
               <div className="space-y-6">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="insuredPolicyOrFecaNumber" className="text-[#202E2D]">INSURED'S POLICY OR FECA NUMBER</label>
+                  <label htmlFor="insuredPolicyOrFecaNumber" className="text-[#202E2D]">INSURED&apos;S POLICY OR FECA NUMBER</label>
                   <input
                     id="insuredPolicyOrFecaNumber"
                     name="insuredPolicyOrFecaNumber"
@@ -1012,7 +1012,7 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 12 - PATIENTS OR AUTHORIZED PERSON'S SIGNATURE
+                - 12 - PATIENTS OR AUTHORIZED PERSON&apos;S SIGNATURE
               </h2>
               
               <div className="space-y-6">
@@ -1051,7 +1051,7 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 13 - INSURED'S OR AUTHORIZED PERSON'S SIGNATURE
+                - 13 - INSURED'S OR AUTHORIZED PERSON&apos;S SIGNATURE
               </h2>
               
               <div className="space-y-6">
@@ -1572,7 +1572,7 @@ export default function AddInsurancePage() {
             {/* - 26 */}
             <section className="mb-8">
               <div className="form-group flex-col flex gap-2">
-                <label htmlFor="patientAccountNo" className="text-[#202E2D]">- 26 - PATIENT'S ACCOUNT NO.</label>
+                <label htmlFor="patientAccountNo" className="text-[#202E2D]">- 26 - PATIENT&apos;S ACCOUNT NO.</label>
                 <input
                   id="patientAccountNo"
                   name="patientAccountNo"
@@ -1682,7 +1682,7 @@ export default function AddInsurancePage() {
                   </div>
                 </div>
                 <p className="text-xs text-gray-500">
-                  By signing this form electronically, and clicking on "Submit Signature", you are agreeing to the terms stated herein.
+                  By signing this form electronically, and clicking on &apos;Submit Signature&apos;, you are agreeing to the terms stated herein.
                 </p>
               </div>
             </section>
@@ -1707,12 +1707,12 @@ export default function AddInsurancePage() {
               <span className="bg-[#7026A1] w-2 h-5 p-1 rounded-lg">
               </span>
               <h2 className="font-medium mb-4 pb-3 text-[#7026A1] text-[18px] inline-block ml-3">
-                - 33 - PHYSICIAN'S/SUPPLIER'S BILLING INFORMATION
+                - 33 - PHYSICIAN'S/SUPPLIER&apos;S BILLING INFORMATION
               </h2>
               
               <div className="space-y-6">
                 <div className="form-group flex-col flex gap-2">
-                  <label htmlFor="physicianSupplierBillingNameAddress" className="text-[#202E2D]">PHYSICIAN'S/SUPPLIER'S BILLING NAME, ADDRESS, ZIP CODE & PHONE #</label>
+                  <label htmlFor="physicianSupplierBillingNameAddress" className="text-[#202E2D]">PHYSICIAN&apos;S/SUPPLIER&apos;S BILLING NAME, ADDRESS, ZIP CODE & PHONE #</label>
                   <input
                     id="physicianSupplierBillingNameAddress"
                     name="physicianSupplierBillingNameAddress"
